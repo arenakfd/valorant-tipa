@@ -1,0 +1,8 @@
+name: test-macos
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: macos-14
+    steps:
+      - run: echo "hello macos"
