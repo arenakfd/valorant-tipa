@@ -1,0 +1,8 @@
+build/
+verify/
+*.log
+.DS_Store
+xcuserdata/
+dd/
+*.tipa
+_check/
