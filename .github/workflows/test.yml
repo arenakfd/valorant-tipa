@@ -1,8 +1,11 @@
-name: test-macos
+name: test-runner
 on:
   workflow_dispatch:
 jobs:
   test:
-    runs-on: macos-14
+    strategy:
+      matrix:
+        os: [macos-13, macos-14, macos-15]
+    runs-on: ${{ matrix.os }}
     steps:
-      - run: echo "hello macos"
+      - run: echo "hello ${{ matrix.os }}"
