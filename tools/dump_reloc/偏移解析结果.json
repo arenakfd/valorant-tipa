@@ -1,0 +1,2430 @@
+{
+ "dump目录": "/var/deepbot/sessions/7611444177/ws/dump",
+ "条目": [
+  {
+   "键": "SDK::GWorld",
+   "源": "全局",
+   "功": [
+    "世界指针"
+   ],
+   "现行": 221419112,
+   "现行原文": "0x0D329668",
+   "断言": "SDK::GWorld",
+   "断言值": null,
+   "说明": "UWorld*。dump OffsetsInfo 给 0x10D329668，减去 0x100000000 基址偏移",
+   "位宽": 8,
+   "值": 221419112,
+   "证据": "OFFSET_GWORLD = 0x10D329668 → 减基址 0x100000000",
+   "状态": "一致"
+  },
+  {
+   "键": "SDK::GNames",
+   "源": "全局",
+   "功": [
+    "类匹配",
+    "真人判定"
+   ],
+   "现行": 227596352,
+   "现行原文": "0x0D90D840",
+   "断言": "SDK::GNames",
+   "断言值": null,
+   "说明": "FNamePool，拼类名/字段名用",
+   "位宽": 8,
+   "值": 227596352,
+   "证据": "OFFSET_GNAMES = 0x10D90D840 → 减基址 0x100000000",
+   "状态": "一致"
+  },
+  {
+   "键": "SDK::GObjects",
+   "源": "全局",
+   "功": [
+    "类匹配"
+   ],
+   "现行": 229919640,
+   "现行原文": "0x0DB44B98",
+   "断言": "SDK::GObjects",
+   "断言值": null,
+   "说明": "FChunkedUObjectArray（对象表）",
+   "位宽": 8,
+   "值": 229919640,
+   "证据": "OFFSET_GOBJECTS = 0x10DB44B98 → 减基址 0x100000000",
+   "状态": "一致"
+  },
+  {
+   "键": "SDK::GEngine",
+   "源": "无依据",
+   "功": [],
+   "现行": 230660696,
+   "现行原文": "0x0DBF9A58",
+   "断言": null,
+   "断言值": null,
+   "说明": "❗整份 dump（OffsetsInfo 只导出 GWorld/GNames/GObjects/ProcessEvent）与 GObjects dump 里都查不到出处，工程里也没有任何代码引用它 → 建议删除，留着是隐患",
+   "位宽": 8,
+   "状态": "不适用",
+   "值": 230660696,
+   "证据": "该来源不由反射 dump 决定（❗无dump依据）"
+  },
+  {
+   "键": "引擎::ProcessEvent",
+   "源": "全局",
+   "功": [],
+   "现行": null,
+   "现行原文": null,
+   "断言": null,
+   "断言值": null,
+   "说明": "工程当前未使用；若以后要调函数可用它",
+   "位宽": 8,
+   "值": 67744616,
+   "证据": "OFFSET_ProcessEvent = 0x10409B368 → 减基址 0x100000000",
+   "状态": "待填"
+  },
+  {
+   "键": "FUObjectArray::Objects",
+   "源": "运行期",
+   "功": [
+    "类匹配"
+   ],
+   "现行": 16,
+   "现行原文": "0x10",
+   "断言": null,
+   "断言值": null,
+   "说明": "块表指针。非反射，dump 查不到",
+   "位宽": 8,
+   "状态": "不适用",
+   "值": 16,
+   "证据": "该来源不由反射 dump 决定（运行期自检）"
+  },
+  {
+   "键": "FUObjectArray::NumElements",
+   "源": "运行期",
+   "功": [
+    "类匹配"
+   ],
+   "现行": 36,
+   "现行原文": "0x24",
+   "断言": null,
+   "断言值": null,
+   "说明": "",
+   "位宽": 4,
+   "状态": "不适用",
+   "值": 36,
+   "证据": "该来源不由反射 dump 决定（运行期自检）"
+  },
+  {
+   "键": "FUObjectArray::MaxElements",
+   "源": "运行期",
+   "功": [
+    "类匹配"
+   ],
+   "现行": 32,
+   "现行原文": "0x20",
+   "断言": null,
+   "断言值": null,
+   "说明": "",
+   "位宽": 4,
+   "状态": "不适用",
+   "值": 32,
+   "证据": "该来源不由反射 dump 决定（运行期自检）"
+  },
+  {
+   "键": "FUObjectArray::NumChunks",
+   "源": "运行期",
+   "功": [
+    "类匹配"
+   ],
+   "现行": 44,
+   "现行原文": "0x2C",
+   "断言": null,
+   "断言值": null,
+   "说明": "",
+   "位宽": 4,
+   "状态": "不适用",
+   "值": 44,
+   "证据": "该来源不由反射 dump 决定（运行期自检）"
+  },
+  {
+   "键": "FUObjectArray::MaxChunks",
+   "源": "运行期",
+   "功": [
+    "类匹配"
+   ],
+   "现行": 40,
+   "现行原文": "0x28",
+   "断言": null,
+   "断言值": null,
+   "说明": "",
+   "位宽": 4,
+   "状态": "不适用",
+   "值": 40,
+   "证据": "该来源不由反射 dump 决定（运行期自检）"
+  },
+  {
+   "键": "FUObjectArray::ChunkSize",
+   "源": "原生",
+   "功": [
+    "类匹配"
+   ],
+   "现行": 65536,
+   "现行原文": "65536",
+   "断言": null,
+   "断言值": null,
+   "说明": "UE4 固定 ElementsPerChunk",
+   "位宽": null,
+   "状态": "不适用",
+   "值": 65536,
+   "证据": "该来源不由反射 dump 决定（引擎native）"
+  },
+  {
+   "键": "FUObjectItem::ItemStride",
+   "源": "原生",
+   "功": [
+    "类匹配"
+   ],
+   "现行": 24,
+   "现行原文": "0x18",
+   "断言": null,
+   "断言值": null,
+   "说明": "",
+   "位宽": null,
+   "状态": "不适用",
+   "值": 24,
+   "证据": "该来源不由反射 dump 决定（引擎native）"
+  },
+  {
+   "键": "FNamePool::Blocks",
+   "源": "原生",
+   "功": [
+    "类匹配"
+   ],
+   "现行": 16,
+   "现行原文": "0x10",
+   "断言": null,
+   "断言值": null,
+   "说明": "引擎内部布局，反射表无",
+   "位宽": null,
+   "状态": "不适用",
+   "值": 16,
+   "证据": "该来源不由反射 dump 决定（引擎native）"
+  },
+  {
+   "键": "UObject::ClassPrivate",
+   "源": "原生",
+   "功": [
+    "类匹配",
+    "真人判定",
+    "实体过滤"
+   ],
+   "现行": 16,
+   "现行原文": "0x10",
+   "断言": null,
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "状态": "不适用",
+   "值": 16,
+   "证据": "该来源不由反射 dump 决定（引擎native）"
+  },
+  {
+   "键": "UObject::NamePrivate",
+   "源": "原生",
+   "功": [
+    "类匹配"
+   ],
+   "现行": 24,
+   "现行原文": "0x18",
+   "断言": null,
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "状态": "不适用",
+   "值": 24,
+   "证据": "该来源不由反射 dump 决定（引擎native）"
+  },
+  {
+   "键": "UObject::OuterPrivate",
+   "源": "原生",
+   "功": [
+    "类匹配"
+   ],
+   "现行": 32,
+   "现行原文": "0x20",
+   "断言": null,
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "状态": "不适用",
+   "值": 32,
+   "证据": "该来源不由反射 dump 决定（引擎native）"
+  },
+  {
+   "键": "UObject::ObjectFlags",
+   "源": "原生",
+   "功": [],
+   "现行": 8,
+   "现行原文": "0x08",
+   "断言": null,
+   "断言值": null,
+   "说明": "",
+   "位宽": 4,
+   "状态": "不适用",
+   "值": 8,
+   "证据": "该来源不由反射 dump 决定（引擎native）"
+  },
+  {
+   "键": "UObject::InternalIndex",
+   "源": "原生",
+   "功": [],
+   "现行": 12,
+   "现行原文": "0x0C",
+   "断言": null,
+   "断言值": null,
+   "说明": "",
+   "位宽": 4,
+   "状态": "不适用",
+   "值": 12,
+   "证据": "该来源不由反射 dump 决定（引擎native）"
+  },
+  {
+   "键": "UObject::VTable",
+   "源": "原生",
+   "功": [],
+   "现行": 0,
+   "现行原文": "0x00",
+   "断言": null,
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "状态": "不适用",
+   "值": 0,
+   "证据": "该来源不由反射 dump 决定（引擎native）"
+  },
+  {
+   "键": "UStruct::SuperStruct",
+   "源": "原生",
+   "功": [
+    "类匹配",
+    "真人判定"
+   ],
+   "现行": 64,
+   "现行原文": "0x40",
+   "断言": null,
+   "断言值": null,
+   "说明": "爬父类链判真人/AI",
+   "位宽": 8,
+   "状态": "不适用",
+   "值": 64,
+   "证据": "该来源不由反射 dump 决定（引擎native）"
+  },
+  {
+   "键": "UClass::ClassDefaultObject",
+   "源": "原生",
+   "功": [
+    "类匹配"
+   ],
+   "现行": 280,
+   "现行原文": "0x118",
+   "断言": null,
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "状态": "不适用",
+   "值": 280,
+   "证据": "该来源不由反射 dump 决定（引擎native）"
+  },
+  {
+   "键": "UWorld::OwningGameInstance",
+   "源": "类",
+   "功": [
+    "世界指针"
+   ],
+   "现行": 384,
+   "现行原文": "0x180",
+   "断言": "SDK::UWorld::OwningGameInstance",
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "值": 384,
+   "类型": "UGameInstance",
+   "大小": 8,
+   "宿主": "UWorld",
+   "证据": "UWorld::OwningGameInstance @0x180 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "UWorld::PersistentLevel",
+   "源": "类",
+   "功": [
+    "世界指针",
+    "方框",
+    "距离",
+    "实体过滤"
+   ],
+   "现行": 48,
+   "现行原文": "0x30",
+   "断言": "SDK::UWorld::PersistentLevel",
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "值": 48,
+   "类型": "ULevel",
+   "大小": 8,
+   "宿主": "UWorld",
+   "证据": "UWorld::PersistentLevel @0x30 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "UWorld::GameState",
+   "源": "类",
+   "功": [],
+   "现行": 288,
+   "现行原文": "0x120",
+   "断言": "SDK::UWorld::GameState",
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "值": 288,
+   "类型": "AGameStateBase",
+   "大小": 8,
+   "宿主": "UWorld",
+   "证据": "UWorld::GameState @0x120 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "UWorld::NetDriver",
+   "源": "类",
+   "功": [],
+   "现行": 56,
+   "现行原文": "0x38",
+   "断言": "SDK::UWorld::NetDriver",
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "值": 56,
+   "类型": "UNetDriver",
+   "大小": 8,
+   "宿主": "UWorld",
+   "证据": "UWorld::NetDriver @0x38 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "UWorld::AuthorityGameMode",
+   "源": "类",
+   "功": [],
+   "现行": 280,
+   "现行原文": "0x118",
+   "断言": "SDK::UWorld::AuthorityGameMode",
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "值": 280,
+   "类型": "AGameModeBase",
+   "大小": 8,
+   "宿主": "UWorld",
+   "证据": "UWorld::AuthorityGameMode @0x118 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "UWorld::Levels",
+   "源": "类",
+   "功": [],
+   "现行": 312,
+   "现行原文": "0x138",
+   "断言": "SDK::UWorld::Levels",
+   "断言值": null,
+   "说明": "",
+   "位宽": 16,
+   "值": 312,
+   "类型": "TArray",
+   "大小": 16,
+   "宿主": "UWorld",
+   "证据": "UWorld::Levels @0x138 size=16",
+   "状态": "一致"
+  },
+  {
+   "键": "UWorld::LevelCollections",
+   "源": "类",
+   "功": [],
+   "现行": 328,
+   "现行原文": "0x148",
+   "断言": "SDK::UWorld::LevelCollections",
+   "断言值": null,
+   "说明": "",
+   "位宽": 16,
+   "值": 328,
+   "类型": "TArray",
+   "大小": 16,
+   "宿主": "UWorld",
+   "证据": "UWorld::LevelCollections @0x148 size=16",
+   "状态": "一致"
+  },
+  {
+   "键": "ULevel::Actors",
+   "源": "原生",
+   "功": [
+    "方框",
+    "距离",
+    "实体过滤"
+   ],
+   "现行": 152,
+   "现行原文": "0x98",
+   "断言": null,
+   "断言值": null,
+   "说明": "❗dump 的 ULevel 反射表从 0xB8(OwningWorld) 起，Actors 没导出（native 成员）。靠引擎布局 + 运行期校验。刷新 Actor 全靠它",
+   "位宽": 16,
+   "状态": "不适用",
+   "值": 152,
+   "证据": "该来源不由反射 dump 决定（引擎native）"
+  },
+  {
+   "键": "ULevel::OwningWorld",
+   "源": "类",
+   "功": [],
+   "现行": 184,
+   "现行原文": "0xB8",
+   "断言": "SDK::ULevel::OwningWorld",
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "值": 184,
+   "类型": "UWorld",
+   "大小": 8,
+   "宿主": "ULevel",
+   "证据": "ULevel::OwningWorld @0xB8 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "ULevel::ActorCluster",
+   "源": "类",
+   "功": [],
+   "现行": 216,
+   "现行原文": "0xD8",
+   "断言": "SDK::ULevel::ActorCluster",
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "值": 216,
+   "类型": "ULevelActorContainer",
+   "大小": 8,
+   "宿主": "ULevel",
+   "证据": "ULevel::ActorCluster @0xD8 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "UGameInstance::LocalPlayers",
+   "源": "类",
+   "功": [
+    "相机",
+    "世界指针"
+   ],
+   "现行": 56,
+   "现行原文": "0x38",
+   "断言": "SDK::UGameInstance::LocalPlayers",
+   "断言值": null,
+   "说明": "",
+   "位宽": 16,
+   "值": 56,
+   "类型": "TArray",
+   "大小": 16,
+   "宿主": "UGameInstance",
+   "证据": "UGameInstance::LocalPlayers @0x38 size=16",
+   "状态": "一致"
+  },
+  {
+   "键": "UPlayer::PlayerController",
+   "源": "类",
+   "功": [
+    "相机"
+   ],
+   "现行": 48,
+   "现行原文": "0x30",
+   "断言": "SDK::UPlayer::PlayerController",
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "值": 48,
+   "类型": "APlayerController",
+   "大小": 8,
+   "宿主": "UPlayer",
+   "证据": "UPlayer::PlayerController @0x30 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "AActor::RootComponent",
+   "源": "类",
+   "功": [
+    "方框",
+    "骨骼",
+    "头甲",
+    "距离",
+    "死亡判定"
+   ],
+   "现行": 344,
+   "现行原文": "0x158",
+   "断言": "SDK::AActor::RootComponent",
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "值": 344,
+   "类型": "USceneComponent",
+   "大小": 8,
+   "宿主": "AActor",
+   "证据": "AActor::RootComponent @0x158 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "AActor::Owner",
+   "源": "类",
+   "功": [
+    "实体过滤"
+   ],
+   "现行": 264,
+   "现行原文": "0x108",
+   "断言": "SDK::AActor::Owner",
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "值": 264,
+   "类型": "AActor",
+   "大小": 8,
+   "宿主": "AActor",
+   "证据": "AActor::Owner @0x108 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "AActor::InstanceComponents",
+   "源": "类",
+   "功": [],
+   "现行": 888,
+   "现行原文": "0x378",
+   "断言": "SDK::AActor::InstanceComponents",
+   "断言值": null,
+   "说明": "",
+   "位宽": 16,
+   "值": 888,
+   "类型": "TArray",
+   "大小": 16,
+   "宿主": "AActor",
+   "证据": "AActor::InstanceComponents @0x378 size=16",
+   "状态": "一致"
+  },
+  {
+   "键": "AActor::BlueprintCreatedComponents",
+   "源": "类",
+   "功": [],
+   "现行": 904,
+   "现行原文": "0x388",
+   "断言": "SDK::AActor::BlueprintCreatedComponents",
+   "断言值": null,
+   "说明": "",
+   "位宽": 16,
+   "值": 904,
+   "类型": "TArray",
+   "大小": 16,
+   "宿主": "AActor",
+   "证据": "AActor::BlueprintCreatedComponents @0x388 size=16",
+   "状态": "一致"
+  },
+  {
+   "键": "AActor::bHidden",
+   "源": "类",
+   "功": [
+    "实体过滤"
+   ],
+   "现行": 104,
+   "现行原文": "0x0068",
+   "断言": "SDK::AActor标志::bHidden",
+   "断言值": null,
+   "说明": "",
+   "位宽": 1,
+   "值": 104,
+   "类型": "uint8",
+   "大小": 1,
+   "宿主": "AActor",
+   "证据": "AActor::bHidden @0x68 size=1",
+   "状态": "一致"
+  },
+  {
+   "键": "AActor::bActorIsBeingDestroyed",
+   "源": "类",
+   "功": [
+    "实体过滤"
+   ],
+   "现行": 108,
+   "现行原文": "0x006C",
+   "断言": "SDK::AActor标志::bActorIsBeingDestroyed",
+   "断言值": null,
+   "说明": "",
+   "位宽": 1,
+   "值": 108,
+   "类型": "uint8",
+   "大小": 1,
+   "宿主": "AActor",
+   "证据": "AActor::bActorIsBeingDestroyed @0x6C size=1",
+   "状态": "一致"
+  },
+  {
+   "键": "USceneComponent::RelativeLocation",
+   "源": "类",
+   "功": [
+    "方框",
+    "距离"
+   ],
+   "现行": 340,
+   "现行原文": "0x154",
+   "断言": "SDK::USceneComponent::RelativeLocation",
+   "断言值": null,
+   "说明": "硬锚点：组件布局的一切推算都以它为准",
+   "位宽": 12,
+   "值": 340,
+   "类型": "FVector",
+   "大小": 12,
+   "宿主": "USceneComponent",
+   "证据": "USceneComponent::RelativeLocation @0x154 size=12",
+   "状态": "一致"
+  },
+  {
+   "键": "USceneComponent::RelativeRotation",
+   "源": "类",
+   "功": [],
+   "现行": 352,
+   "现行原文": "0x160",
+   "断言": "SDK::USceneComponent::RelativeRotation",
+   "断言值": null,
+   "说明": "",
+   "位宽": 12,
+   "值": 352,
+   "类型": "FRotator",
+   "大小": 12,
+   "宿主": "USceneComponent",
+   "证据": "USceneComponent::RelativeRotation @0x160 size=12",
+   "状态": "一致"
+  },
+  {
+   "键": "USceneComponent::RelativeScale3D",
+   "源": "类",
+   "功": [],
+   "现行": 364,
+   "现行原文": "0x16C",
+   "断言": "SDK::USceneComponent::RelativeScale3D",
+   "断言值": null,
+   "说明": "",
+   "位宽": 12,
+   "值": 364,
+   "类型": "FVector",
+   "大小": 12,
+   "宿主": "USceneComponent",
+   "证据": "USceneComponent::RelativeScale3D @0x16C size=12",
+   "状态": "一致"
+  },
+  {
+   "键": "USceneComponent::ComponentVelocity",
+   "源": "类",
+   "功": [],
+   "现行": 376,
+   "现行原文": "0x178",
+   "断言": "SDK::USceneComponent::ComponentVelocity",
+   "断言值": null,
+   "说明": "",
+   "位宽": 12,
+   "值": 376,
+   "类型": "FVector",
+   "大小": 12,
+   "宿主": "USceneComponent",
+   "证据": "USceneComponent::ComponentVelocity @0x178 size=12",
+   "状态": "一致"
+  },
+  {
+   "键": "USceneComponent::bVisible",
+   "源": "类",
+   "功": [
+    "实体过滤"
+   ],
+   "现行": 388,
+   "现行原文": "0x0184",
+   "断言": "SDK::USceneComponent标志::bVisible",
+   "断言值": null,
+   "说明": "",
+   "位宽": 1,
+   "值": 388,
+   "类型": "uint8",
+   "大小": 1,
+   "宿主": "USceneComponent",
+   "证据": "USceneComponent::bVisible @0x184 size=1",
+   "状态": "一致"
+  },
+  {
+   "键": "USceneComponent::bHiddenInGame",
+   "源": "类",
+   "功": [
+    "实体过滤"
+   ],
+   "现行": 389,
+   "现行原文": "0x0185",
+   "断言": "SDK::USceneComponent标志::bHiddenInGame",
+   "断言值": null,
+   "说明": "",
+   "位宽": 1,
+   "值": 389,
+   "类型": "uint8",
+   "大小": 1,
+   "宿主": "USceneComponent",
+   "证据": "USceneComponent::bHiddenInGame @0x185 size=1",
+   "状态": "一致"
+  },
+  {
+   "键": "USceneComponent::ComponentToWorld",
+   "源": "锚",
+   "功": [
+    "方框",
+    "骨骼"
+   ],
+   "现行": 288,
+   "现行原文": "0x120",
+   "断言": "SDK::USceneComponent::ComponentToWorld",
+   "断言值": null,
+   "说明": "反射未导出。锚定依据：紧贴 RelativeLocation(0x154) 之前的 0x34 空洞，正好等于 FTransform(0x30)+4 字节对齐",
+   "位宽": 48,
+   "值": 288,
+   "证据": "锚 USceneComponent::RelativeLocation @0x154 -52 → 0x120（左邻 ClientAttachedChildren@0x110，右邻 RelativeLocation@0x154）",
+   "状态": "一致"
+  },
+  {
+   "键": "USceneComponent::世界变换指针",
+   "源": "锚",
+   "功": [
+    "骨骼",
+    "方框",
+    "距离"
+   ],
+   "现行": 512,
+   "现行原文": "0x200",
+   "断言": "SDK::USceneComponent补::世界变换指针",
+   "断言值": null,
+   "说明": "★参考实现与工程骨骼链共用的 FTransform* 世界变换指针（Root 和 Mesh 上同一偏移都成立）。反射未导出：落点在 USceneComponent 尾部未导出区，左邻 PhysicsVolumeChangedDelegate(0x18A)、右邻 bEnableCompDeferUpdateOverlapWhenEndScopeMove(0x209)，即 0x209 前 9 字节。改动会连带骨骼/位置一起飘，务必优先复核",
+   "位宽": 8,
+   "值": 512,
+   "证据": "锚 USceneComponent::bEnableCompDeferUpdateOverlapWhenEndScopeMove @0x209 -9 → 0x200（左邻 PhysicsVolumeChangedDelegate@0x18A，右邻 bEnableCompDeferUpdateOverlapWhenEndScopeMove@0x209）",
+   "状态": "一致"
+  },
+  {
+   "键": "APawn::PlayerState",
+   "源": "类",
+   "功": [
+    "真人判定",
+    "实体过滤"
+   ],
+   "现行": 984,
+   "现行原文": "0x3D8",
+   "断言": "SDK::APawn::PlayerState",
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "值": 984,
+   "类型": "APlayerState",
+   "大小": 8,
+   "宿主": "APawn",
+   "证据": "APawn::PlayerState @0x3D8 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "APawn::Controller",
+   "源": "类",
+   "功": [
+    "真人判定",
+    "实体过滤"
+   ],
+   "现行": 1008,
+   "现行原文": "0x3F0",
+   "断言": "SDK::APawn::Controller",
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "值": 1008,
+   "类型": "AController",
+   "大小": 8,
+   "宿主": "APawn",
+   "证据": "APawn::Controller @0x3F0 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "ACharacter::Mesh",
+   "源": "类",
+   "功": [
+    "骨骼",
+    "头甲",
+    "方框"
+   ],
+   "现行": 1048,
+   "现行原文": "0x418",
+   "断言": "SDK::ACharacter::Mesh",
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "值": 1048,
+   "类型": "USkeletalMeshComponent",
+   "大小": 8,
+   "宿主": "ACharacter",
+   "证据": "ACharacter::Mesh @0x418 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "ACharacter::CharacterMovement",
+   "源": "类",
+   "功": [],
+   "现行": 1056,
+   "现行原文": "0x420",
+   "断言": "SDK::ACharacter::CharacterMovement",
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "值": 1056,
+   "类型": "UCharacterMovementComponent",
+   "大小": 8,
+   "宿主": "ACharacter",
+   "证据": "ACharacter::CharacterMovement @0x420 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "APlayerController::AcknowledgedPawn",
+   "源": "类",
+   "功": [
+    "方框",
+    "距离"
+   ],
+   "现行": 1064,
+   "现行原文": "0x428",
+   "断言": "SDK::APlayerController::AcknowledgedPawn",
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "值": 1064,
+   "类型": "APawn",
+   "大小": 8,
+   "宿主": "APlayerController",
+   "证据": "APlayerController::AcknowledgedPawn @0x428 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "APlayerController::MyHUD",
+   "源": "类",
+   "功": [],
+   "现行": 1080,
+   "现行原文": "0x438",
+   "断言": "SDK::APlayerController::MyHUD",
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "值": 1080,
+   "类型": "AHUD",
+   "大小": 8,
+   "宿主": "APlayerController",
+   "证据": "APlayerController::MyHUD @0x438 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "APlayerController::PlayerCameraManager",
+   "源": "类",
+   "功": [
+    "相机",
+    "方框",
+    "骨骼",
+    "射线",
+    "距离"
+   ],
+   "现行": 1088,
+   "现行原文": "0x440",
+   "断言": "SDK::APlayerController::PlayerCameraManager",
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "值": 1088,
+   "类型": "APlayerCameraManager",
+   "大小": 8,
+   "宿主": "APlayerController",
+   "证据": "APlayerController::PlayerCameraManager @0x440 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "APlayerController::bIsLocalPlayerController",
+   "源": "类",
+   "功": [
+    "实体过滤"
+   ],
+   "现行": 1780,
+   "现行原文": "0x6F4",
+   "断言": "SDK::APlayerController::bIsLocalPlayerController",
+   "断言值": null,
+   "说明": "",
+   "位宽": 1,
+   "值": 1780,
+   "类型": "bool",
+   "大小": 1,
+   "宿主": "APlayerController",
+   "证据": "APlayerController::bIsLocalPlayerController @0x6F4 size=1",
+   "状态": "一致"
+  },
+  {
+   "键": "APlayerCameraManager::CameraCachePrivate",
+   "源": "类",
+   "功": [
+    "相机"
+   ],
+   "现行": 8048,
+   "现行原文": "0x1F70",
+   "断言": "SDK::APlayerCameraManager::CameraCachePrivate",
+   "断言值": null,
+   "说明": "当前使用的主源",
+   "位宽": 1728,
+   "值": 8048,
+   "类型": "FCameraCacheEntry",
+   "大小": 1728,
+   "宿主": "APlayerCameraManager",
+   "证据": "APlayerCameraManager::CameraCachePrivate @0x1F70 size=1728",
+   "状态": "一致"
+  },
+  {
+   "键": "APlayerCameraManager::CameraCache",
+   "源": "类",
+   "功": [
+    "相机"
+   ],
+   "现行": 1056,
+   "现行原文": "0x420",
+   "断言": "SDK::APlayerCameraManager::CameraCache",
+   "断言值": null,
+   "说明": "备选格",
+   "位宽": 1728,
+   "值": 1056,
+   "类型": "FCameraCacheEntry",
+   "大小": 1728,
+   "宿主": "APlayerCameraManager",
+   "证据": "APlayerCameraManager::CameraCache @0x420 size=1728",
+   "状态": "一致"
+  },
+  {
+   "键": "APlayerCameraManager::LastFrameCameraCache",
+   "源": "类",
+   "功": [
+    "相机"
+   ],
+   "现行": 2784,
+   "现行原文": "0xAE0",
+   "断言": "SDK::APlayerCameraManager::LastFrameCameraCache",
+   "断言值": null,
+   "说明": "备选格",
+   "位宽": 1728,
+   "值": 2784,
+   "类型": "FCameraCacheEntry",
+   "大小": 1728,
+   "宿主": "APlayerCameraManager",
+   "证据": "APlayerCameraManager::LastFrameCameraCache @0xAE0 size=1728",
+   "状态": "一致"
+  },
+  {
+   "键": "APlayerCameraManager::ViewTarget",
+   "源": "类",
+   "功": [],
+   "现行": 4512,
+   "现行原文": "0x11A0",
+   "断言": "SDK::APlayerCameraManager::ViewTarget",
+   "断言值": null,
+   "说明": "",
+   "位宽": 1744,
+   "值": 4512,
+   "类型": "FTViewTarget",
+   "大小": 1744,
+   "宿主": "APlayerCameraManager",
+   "证据": "APlayerCameraManager::ViewTarget @0x11A0 size=1744",
+   "状态": "一致"
+  },
+  {
+   "键": "FCameraCacheEntry::POV",
+   "源": "结构",
+   "功": [
+    "相机"
+   ],
+   "现行": 16,
+   "现行原文": "0x10",
+   "断言": "SDK::FCameraCacheEntry::POV",
+   "断言值": null,
+   "说明": "",
+   "位宽": 1712,
+   "值": 16,
+   "类型": "FMinimalViewInfo",
+   "大小": 1712,
+   "宿主": "FCameraCacheEntry",
+   "证据": "FCameraCacheEntry::POV @0x10 size=1712",
+   "状态": "一致"
+  },
+  {
+   "键": "FMinimalViewInfo::Location",
+   "源": "结构",
+   "功": [
+    "相机",
+    "方框",
+    "骨骼",
+    "射线"
+   ],
+   "现行": 0,
+   "现行原文": "0x00",
+   "断言": "SDK::FMinimalViewInfo::Location",
+   "断言值": null,
+   "说明": "",
+   "位宽": 12,
+   "值": 0,
+   "类型": "FVector",
+   "大小": 12,
+   "宿主": "FMinimalViewInfo",
+   "证据": "FMinimalViewInfo::Location @0x0 size=12",
+   "状态": "一致"
+  },
+  {
+   "键": "FMinimalViewInfo::Rotation",
+   "源": "结构",
+   "功": [
+    "相机",
+    "方框",
+    "骨骼"
+   ],
+   "现行": 12,
+   "现行原文": "0x0C",
+   "断言": "SDK::FMinimalViewInfo::Rotation",
+   "断言值": null,
+   "说明": "",
+   "位宽": 12,
+   "值": 12,
+   "类型": "FRotator",
+   "大小": 12,
+   "宿主": "FMinimalViewInfo",
+   "证据": "FMinimalViewInfo::Rotation @0xC size=12",
+   "状态": "一致"
+  },
+  {
+   "键": "FMinimalViewInfo::FOV",
+   "源": "结构",
+   "功": [
+    "相机",
+    "方框",
+    "骨骼"
+   ],
+   "现行": 24,
+   "现行原文": "0x18",
+   "断言": "SDK::FMinimalViewInfo::FOV",
+   "断言值": null,
+   "说明": "",
+   "位宽": 4,
+   "值": 24,
+   "类型": "float",
+   "大小": 4,
+   "宿主": "FMinimalViewInfo",
+   "证据": "FMinimalViewInfo::FOV @0x18 size=4",
+   "状态": "一致"
+  },
+  {
+   "键": "FMinimalViewInfo::DesiredFOV",
+   "源": "结构",
+   "功": [
+    "相机"
+   ],
+   "现行": 28,
+   "现行原文": "0x1C",
+   "断言": "SDK::FMinimalViewInfo补::DesiredFOV",
+   "断言值": null,
+   "说明": "",
+   "位宽": 4,
+   "值": 28,
+   "类型": "float",
+   "大小": 4,
+   "宿主": "FMinimalViewInfo",
+   "证据": "FMinimalViewInfo::DesiredFOV @0x1C size=4",
+   "状态": "一致"
+  },
+  {
+   "键": "FMinimalViewInfo::AspectRatio",
+   "源": "结构",
+   "功": [
+    "相机"
+   ],
+   "现行": 48,
+   "现行原文": "0x30",
+   "断言": "SDK::FMinimalViewInfo补::AspectRatio",
+   "断言值": null,
+   "说明": "",
+   "位宽": 4,
+   "值": 48,
+   "类型": "float",
+   "大小": 4,
+   "宿主": "FMinimalViewInfo",
+   "证据": "FMinimalViewInfo::AspectRatio @0x30 size=4",
+   "状态": "一致"
+  },
+  {
+   "键": "FMinimalViewInfo::bConstrainAspectRatio",
+   "源": "结构",
+   "功": [
+    "相机"
+   ],
+   "现行": 52,
+   "现行原文": "0x34",
+   "断言": "SDK::FMinimalViewInfo补::bConstrainAspectRatio",
+   "断言值": null,
+   "说明": "",
+   "位宽": 1,
+   "值": 52,
+   "类型": "uint8",
+   "大小": 1,
+   "宿主": "FMinimalViewInfo",
+   "证据": "FMinimalViewInfo::bConstrainAspectRatio @0x34 size=1",
+   "状态": "一致"
+  },
+  {
+   "键": "FMinimalViewInfo::OffCenterProjectionOffset",
+   "源": "结构",
+   "功": [
+    "相机"
+   ],
+   "现行": 1632,
+   "现行原文": "0x660",
+   "断言": "SDK::FMinimalViewInfo补::OffCenterProjectionOffset",
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "值": 1632,
+   "类型": "FVector2D",
+   "大小": 8,
+   "宿主": "FMinimalViewInfo",
+   "证据": "FMinimalViewInfo::OffCenterProjectionOffset @0x660 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "FMinimalViewInfo::FOVMode",
+   "源": "结构",
+   "功": [
+    "相机"
+   ],
+   "现行": 1640,
+   "现行原文": "0x668",
+   "断言": "SDK::FMinimalViewInfo补::FOVMode",
+   "断言值": null,
+   "说明": "水平/垂直 FOV 的解释开关，投影链必须跟它走",
+   "位宽": 1,
+   "值": 1640,
+   "类型": "EECameraFOVMode",
+   "大小": 1,
+   "宿主": "FMinimalViewInfo",
+   "证据": "FMinimalViewInfo::FOVMode @0x668 size=1",
+   "状态": "一致"
+  },
+  {
+   "键": "FTransform::Rotation",
+   "源": "结构",
+   "功": [
+    "骨骼"
+   ],
+   "现行": 0,
+   "现行原文": "0x00",
+   "断言": "SDK::FTransform::Rotation",
+   "断言值": null,
+   "说明": "",
+   "位宽": 16,
+   "值": 0,
+   "类型": "FQuat",
+   "大小": 16,
+   "宿主": "FTransform",
+   "证据": "FTransform::Rotation @0x0 size=16",
+   "状态": "一致"
+  },
+  {
+   "键": "FTransform::Translation",
+   "源": "结构",
+   "功": [
+    "骨骼"
+   ],
+   "现行": 16,
+   "现行原文": "0x10",
+   "断言": "SDK::FTransform::translation",
+   "断言值": null,
+   "说明": "",
+   "位宽": 12,
+   "值": 16,
+   "类型": "FVector",
+   "大小": 12,
+   "宿主": "FTransform",
+   "证据": "FTransform::Translation @0x10 size=12",
+   "状态": "一致"
+  },
+  {
+   "键": "FTransform::Scale3D",
+   "源": "结构",
+   "功": [
+    "骨骼"
+   ],
+   "现行": 28,
+   "现行原文": "0x1C",
+   "断言": "SDK::FTransform::Scale3D",
+   "断言值": null,
+   "说明": "",
+   "位宽": 12,
+   "值": 28,
+   "类型": "FVector",
+   "大小": 12,
+   "宿主": "FTransform",
+   "证据": "FTransform::Scale3D @0x1C size=12",
+   "状态": "一致"
+  },
+  {
+   "键": "FTransform::元素大小",
+   "源": "原生",
+   "功": [
+    "骨骼"
+   ],
+   "现行": 48,
+   "现行原文": "0x30",
+   "断言": null,
+   "断言值": null,
+   "说明": "骨骼数组元素步进，参考实现 0x100091dcc 实证 smaddl 骨下标*0x30",
+   "位宽": null,
+   "状态": "不适用",
+   "值": 48,
+   "证据": "该来源不由反射 dump 决定（引擎native）"
+  },
+  {
+   "键": "ASGPlayerCameraManager::bEnableModifyRotationByWeaponRecoil",
+   "源": "类",
+   "功": [
+    "无后坐力"
+   ],
+   "现行": 11865,
+   "现行原文": "0x2E59",
+   "断言": "SDK::ASGPlayerCameraManager补::bEnableModifyRotationByWeaponRecoil",
+   "断言值": null,
+   "说明": "无后坐力最干净的一刀：游戏自己用武器后坐力改视角旋转的总闸，置 false 可逆",
+   "位宽": 1,
+   "值": 11865,
+   "类型": "bool",
+   "大小": 1,
+   "宿主": "ASGPlayerCameraManager",
+   "证据": "ASGPlayerCameraManager::bEnableModifyRotationByWeaponRecoil @0x2E59 size=1",
+   "状态": "一致"
+  },
+  {
+   "键": "ASGPlayerCameraManager::bEnableModifyRotationByMotionSensor",
+   "源": "类",
+   "功": [
+    "无后坐力"
+   ],
+   "现行": 11864,
+   "现行原文": "0x2E58",
+   "断言": "SDK::ASGPlayerCameraManager补::bEnableModifyRotationByMotionSensor",
+   "断言值": null,
+   "说明": "",
+   "位宽": 1,
+   "值": 11864,
+   "类型": "bool",
+   "大小": 1,
+   "宿主": "ASGPlayerCameraManager",
+   "证据": "ASGPlayerCameraManager::bEnableModifyRotationByMotionSensor @0x2E58 size=1",
+   "状态": "一致"
+  },
+  {
+   "键": "ASGPlayerCameraManager::bEnableModifyRotationByAutoAiming",
+   "源": "类",
+   "功": [],
+   "现行": 11866,
+   "现行原文": "0x2E5A",
+   "断言": "SDK::ASGPlayerCameraManager补::bEnableModifyRotationByAutoAiming",
+   "断言值": null,
+   "说明": "",
+   "位宽": 1,
+   "值": 11866,
+   "类型": "bool",
+   "大小": 1,
+   "宿主": "ASGPlayerCameraManager",
+   "证据": "ASGPlayerCameraManager::bEnableModifyRotationByAutoAiming @0x2E5A size=1",
+   "状态": "一致"
+  },
+  {
+   "键": "ASGPlayerCameraManager::bEnableModifyRotationByTakeHit",
+   "源": "类",
+   "功": [],
+   "现行": 11868,
+   "现行原文": "0x2E5C",
+   "断言": "SDK::ASGPlayerCameraManager补::bEnableModifyRotationByTakeHit",
+   "断言值": null,
+   "说明": "",
+   "位宽": 1,
+   "值": 11868,
+   "类型": "bool",
+   "大小": 1,
+   "宿主": "ASGPlayerCameraManager",
+   "证据": "ASGPlayerCameraManager::bEnableModifyRotationByTakeHit @0x2E5C size=1",
+   "状态": "一致"
+  },
+  {
+   "键": "ASGPlayerCameraManager::bUseDefaultFOVImpl",
+   "源": "类",
+   "功": [
+    "相机"
+   ],
+   "现行": 11869,
+   "现行原文": "0x2E5D",
+   "断言": "SDK::ASGPlayerCameraManager补::bUseDefaultFOVImpl",
+   "断言值": null,
+   "说明": "",
+   "位宽": 1,
+   "值": 11869,
+   "类型": "bool",
+   "大小": 1,
+   "宿主": "ASGPlayerCameraManager",
+   "证据": "ASGPlayerCameraManager::bUseDefaultFOVImpl @0x2E5D size=1",
+   "状态": "一致"
+  },
+  {
+   "键": "APlayerState::PawnPrivate",
+   "源": "类",
+   "功": [
+    "真人判定"
+   ],
+   "现行": 1032,
+   "现行原文": "0x408",
+   "断言": "SDK::APlayerState::PawnPrivate",
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "值": 1032,
+   "类型": "APawn",
+   "大小": 8,
+   "宿主": "APlayerState",
+   "证据": "APlayerState::PawnPrivate @0x408 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "APlayerState::PlayerNamePrivate",
+   "源": "类",
+   "功": [],
+   "现行": 1256,
+   "现行原文": "0x4E8",
+   "断言": "SDK::APlayerState::PlayerNamePrivate",
+   "断言值": null,
+   "说明": "",
+   "位宽": 16,
+   "值": 1256,
+   "类型": "FString",
+   "大小": 16,
+   "宿主": "APlayerState",
+   "证据": "APlayerState::PlayerNamePrivate @0x4E8 size=16",
+   "状态": "一致"
+  },
+  {
+   "键": "ASGCharacter::CachedCharacterType",
+   "源": "类",
+   "功": [
+    "真人判定"
+   ],
+   "现行": 5753,
+   "现行原文": "0x1679",
+   "断言": "SDK::ASGCharacter补::CachedCharacterType",
+   "断言值": null,
+   "说明": "EECharacterType：1=PMC 2=SCAV 是真人，3~20 是 AI",
+   "位宽": 1,
+   "值": 5753,
+   "类型": "EECharacterType",
+   "大小": 1,
+   "宿主": "ASGCharacter",
+   "证据": "ASGCharacter::CachedCharacterType @0x1679 size=1",
+   "状态": "一致"
+  },
+  {
+   "键": "ASGCharacter::gid",
+   "源": "类",
+   "功": [
+    "真人判定",
+    "实体过滤"
+   ],
+   "现行": 5760,
+   "现行原文": "0x1680",
+   "断言": "SDK::ASGCharacter补::CharacterGid",
+   "断言值": null,
+   "说明": "同一角色被两条路列出时去重",
+   "位宽": 8,
+   "值": 5760,
+   "类型": "uint64",
+   "大小": 8,
+   "宿主": "ASGCharacter",
+   "证据": "ASGCharacter::gid @0x1680 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "ASGCharacter::AbilitySystemComponent",
+   "源": "类",
+   "功": [
+    "血量"
+   ],
+   "现行": 5944,
+   "现行原文": "0x1738",
+   "断言": "SDK::ASGCharacter::AbilitySystemComponent",
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "值": 5944,
+   "类型": "UAbilitySystemComponent",
+   "大小": 8,
+   "宿主": "ASGCharacter",
+   "证据": "ASGCharacter::AbilitySystemComponent @0x1738 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "ASGCharacter::CmpCacheArray",
+   "源": "类",
+   "功": [
+    "无后坐力",
+    "头甲",
+    "死亡判定"
+   ],
+   "现行": 6360,
+   "现行原文": "0x18D8",
+   "断言": "SDK::ASGCharacter组件表::CmpCacheArray",
+   "断言值": null,
+   "说明": "组件缓存表，按类名进表找 武器管理器/后坐力/护甲管理器/死亡组件",
+   "位宽": 536,
+   "值": 6360,
+   "类型": "UActorComponent",
+   "大小": 536,
+   "宿主": "ASGCharacter",
+   "证据": "ASGCharacter::CmpCacheArray @0x18D8 size=536",
+   "状态": "一致"
+  },
+  {
+   "键": "ASGCharacter::CmpCacheArray槽数",
+   "源": "原生",
+   "功": [
+    "无后坐力",
+    "头甲",
+    "死亡判定"
+   ],
+   "现行": 67,
+   "现行原文": "0x43",
+   "断言": null,
+   "断言值": null,
+   "说明": "= 536/8，跟着 CmpCacheArray 的 size 走",
+   "位宽": null,
+   "状态": "不适用",
+   "值": 67,
+   "证据": "该来源不由反射 dump 决定（引擎native）"
+  },
+  {
+   "键": "ASGCharacter::PlayerInfo",
+   "源": "类",
+   "功": [],
+   "现行": 5792,
+   "现行原文": "0x16A0",
+   "断言": null,
+   "断言值": null,
+   "说明": "备用（不在 SDK.h 里，留给以后）",
+   "位宽": 40,
+   "值": 5792,
+   "类型": "FSGPlayerInfo",
+   "大小": 40,
+   "宿主": "ASGCharacter",
+   "证据": "ASGCharacter::PlayerInfo @0x16A0 size=40",
+   "状态": "一致"
+  },
+  {
+   "键": "ASGPlayerState::TeamIndex",
+   "源": "类",
+   "功": [
+    "真人判定"
+   ],
+   "现行": 1608,
+   "现行原文": "0x648",
+   "断言": "SDK::ASGPlayerState::TeamIndex",
+   "断言值": null,
+   "说明": "阵营；当前工程未启用，别在没实测前拿它过滤",
+   "位宽": 4,
+   "值": 1608,
+   "类型": "int32",
+   "大小": 4,
+   "宿主": "ASGPlayerState",
+   "证据": "ASGPlayerState::TeamIndex @0x648 size=4",
+   "状态": "一致"
+  },
+  {
+   "键": "USkinnedMeshComponent::SkeletalMesh",
+   "源": "类",
+   "功": [
+    "骨骼"
+   ],
+   "现行": 1744,
+   "现行原文": "0x6D0",
+   "断言": "SDK::USkinnedMeshComponent::SkeletalMesh",
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "值": 1744,
+   "类型": "USkeletalMesh",
+   "大小": 8,
+   "宿主": "USkinnedMeshComponent",
+   "证据": "USkinnedMeshComponent::SkeletalMesh @0x6D0 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "USkinnedMeshComponent::CachedWorldToLocalTransform",
+   "源": "类",
+   "功": [
+    "骨骼"
+   ],
+   "现行": 2192,
+   "现行原文": "0x890",
+   "断言": "SDK::USkinnedMeshComponent补::CachedWorldToLocalTransform",
+   "断言值": null,
+   "说明": "",
+   "位宽": 64,
+   "值": 2192,
+   "类型": "FMatrix",
+   "大小": 64,
+   "宿主": "USkinnedMeshComponent",
+   "证据": "USkinnedMeshComponent::CachedWorldToLocalTransform @0x890 size=64",
+   "状态": "一致"
+  },
+  {
+   "键": "USkinnedMeshComponent::骨骼数组族",
+   "源": "锚",
+   "功": [
+    "骨骼"
+   ],
+   "现行": 1792,
+   "现行原文": "0x700",
+   "断言": "SDK::USkinnedMeshComponent补::骨骼数组族",
+   "断言值": null,
+   "说明": "★参考实现 0x100091928 实证：Arr = read64(Mesh + 0x700 + idx*16)。反射未导出：落在 VertexOffsetUsage(0x6F0) 与 PhysicsAssetOverride(0x7F8) 之间的 0xF8 空洞里",
+   "位宽": 8,
+   "值": 1792,
+   "证据": "锚 USkinnedMeshComponent::VertexOffsetUsage @0x6F0 +16 → 0x700（左邻 VertexOffsetUsage@0x6F0，右邻 PhysicsAssetOverride@0x7F8）",
+   "状态": "一致"
+  },
+  {
+   "键": "USkinnedMeshComponent::骨骼数组索引",
+   "源": "锚",
+   "功": [
+    "骨骼"
+   ],
+   "现行": 1860,
+   "现行原文": "0x744",
+   "断言": "SDK::USkinnedMeshComponent补::骨骼数组索引",
+   "断言值": null,
+   "说明": "★参考实现 0x1000918b8 实证：idx = read32(Mesh + 0x744)，用来选哪一路缓冲。同一空洞内",
+   "位宽": 4,
+   "值": 1860,
+   "证据": "锚 USkinnedMeshComponent::VertexOffsetUsage @0x6F0 +84 → 0x744（左邻 VertexOffsetUsage@0x6F0，右邻 PhysicsAssetOverride@0x7F8）",
+   "状态": "一致"
+  },
+  {
+   "键": "USkeletalMeshComponent::CachedComponentSpaceTransforms",
+   "源": "类",
+   "功": [
+    "骨骼"
+   ],
+   "现行": 2488,
+   "现行原文": "0x9B8",
+   "断言": "SDK::USkeletalMeshComponent::CachedComponentSpaceTransforms",
+   "断言值": null,
+   "说明": "修复版21 用过这条，实测画不出骨骼 → 现已降为候选，不是主路",
+   "位宽": 16,
+   "值": 2488,
+   "类型": "TArray",
+   "大小": 16,
+   "宿主": "USkeletalMeshComponent",
+   "证据": "USkeletalMeshComponent::CachedComponentSpaceTransforms @0x9B8 size=16",
+   "状态": "一致"
+  },
+  {
+   "键": "USkeletalMeshComponent::CachedBoneSpaceTransforms",
+   "源": "类",
+   "功": [
+    "骨骼"
+   ],
+   "现行": 2472,
+   "现行原文": "0x9A8",
+   "断言": "SDK::USkeletalMeshComponent::CachedBoneSpaceTransforms",
+   "断言值": null,
+   "说明": "",
+   "位宽": 16,
+   "值": 2472,
+   "类型": "TArray",
+   "大小": 16,
+   "宿主": "USkeletalMeshComponent",
+   "证据": "USkeletalMeshComponent::CachedBoneSpaceTransforms @0x9A8 size=16",
+   "状态": "一致"
+  },
+  {
+   "键": "USkeletalMeshComponent::ComponentSpaceTransformsArray",
+   "源": "锚",
+   "功": [
+    "骨骼"
+   ],
+   "现行": 2248,
+   "现行原文": "0x8C8",
+   "断言": null,
+   "断言值": null,
+   "说明": "❗此数落点可疑：0x8C8 正好在 USkinnedMeshComponent::CachedWorldToLocalTransform(0x890, 64字节) 区间内(0x890~0x8D0)，等于那个矩阵 +0x38。只当兜底候选，别当主路",
+   "位宽": 8,
+   "值": 2248,
+   "证据": "锚 USkeletalMeshComponent::CachedBoneSpaceTransforms @0x9A8 -224 → 0x8C8",
+   "状态": "一致"
+  },
+  {
+   "键": "UAbilitySystemComponent::SpawnedAttributes",
+   "源": "类",
+   "功": [
+    "血量"
+   ],
+   "现行": 368,
+   "现行原文": "0x170",
+   "断言": "SDK::UAbilitySystemComponent::SpawnedAttributes",
+   "断言值": null,
+   "说明": "",
+   "位宽": 16,
+   "值": 368,
+   "类型": "TArray",
+   "大小": 16,
+   "宿主": "UAbilitySystemComponent",
+   "证据": "UAbilitySystemComponent::SpawnedAttributes @0x170 size=16",
+   "状态": "一致"
+  },
+  {
+   "键": "USGActorHealthAttributeSet::Health",
+   "源": "类",
+   "功": [
+    "血量"
+   ],
+   "现行": 68,
+   "现行原文": "0x44",
+   "断言": "SDK::USGActorHealthAttributeSet::Health",
+   "断言值": null,
+   "说明": "",
+   "位宽": 4,
+   "值": 68,
+   "类型": "float",
+   "大小": 4,
+   "宿主": "USGActorHealthAttributeSet",
+   "证据": "USGActorHealthAttributeSet::Health @0x44 size=4",
+   "状态": "一致"
+  },
+  {
+   "键": "USGActorHealthAttributeSet::HealthMax",
+   "源": "类",
+   "功": [
+    "血量"
+   ],
+   "现行": 72,
+   "现行原文": "0x48",
+   "断言": "SDK::USGActorHealthAttributeSet::HealthMax",
+   "断言值": null,
+   "说明": "",
+   "位宽": 4,
+   "值": 72,
+   "类型": "float",
+   "大小": 4,
+   "宿主": "USGActorHealthAttributeSet",
+   "证据": "USGActorHealthAttributeSet::HealthMax @0x48 size=4",
+   "状态": "一致"
+  },
+  {
+   "键": "USGCharacterHealthAttributeSet::DBNOHealth",
+   "源": "类",
+   "功": [
+    "血量"
+   ],
+   "现行": 84,
+   "现行原文": "0x54",
+   "断言": "SDK::USGCharacterHealthAttributeSet::DBNOHealth",
+   "断言值": null,
+   "说明": "",
+   "位宽": 4,
+   "值": 84,
+   "类型": "float",
+   "大小": 4,
+   "宿主": "USGCharacterHealthAttributeSet",
+   "证据": "USGCharacterHealthAttributeSet::DBNOHealth @0x54 size=4",
+   "状态": "一致"
+  },
+  {
+   "键": "USGCharacterHealthAttributeSet::DBNOHealthMax",
+   "源": "类",
+   "功": [
+    "血量"
+   ],
+   "现行": 88,
+   "现行原文": "0x58",
+   "断言": "SDK::USGCharacterHealthAttributeSet::DBNOHealthMax",
+   "断言值": null,
+   "说明": "",
+   "位宽": 4,
+   "值": 88,
+   "类型": "float",
+   "大小": 4,
+   "宿主": "USGCharacterHealthAttributeSet",
+   "证据": "USGCharacterHealthAttributeSet::DBNOHealthMax @0x58 size=4",
+   "状态": "一致"
+  },
+  {
+   "键": "USGCharacterDeathComponent::DeathInfo",
+   "源": "类",
+   "功": [
+    "死亡判定"
+   ],
+   "现行": 504,
+   "现行原文": "0x1F8",
+   "断言": "SDK::USGCharacterDeathComponent::DeathInfo",
+   "断言值": null,
+   "说明": "FCharacterDeathInfo 内联（size=88，dump 实证），不是指针",
+   "位宽": 88,
+   "值": 504,
+   "类型": "FCharacterDeathInfo",
+   "大小": 88,
+   "宿主": "USGCharacterDeathComponent",
+   "证据": "USGCharacterDeathComponent::DeathInfo @0x1F8 size=88",
+   "状态": "一致"
+  },
+  {
+   "键": "FCharacterDeathInfo::bIsDead",
+   "源": "结构",
+   "功": [
+    "死亡判定"
+   ],
+   "现行": 0,
+   "现行原文": "0x00",
+   "断言": "SDK::FCharacterDeathInfo::bIsDead",
+   "断言值": null,
+   "说明": "游戏自己 IsDead() 读的就是它，Net+RepNotify，权威",
+   "位宽": 1,
+   "值": 0,
+   "类型": "bool",
+   "大小": 1,
+   "宿主": "FCharacterDeathInfo",
+   "证据": "FCharacterDeathInfo::bIsDead @0x0 size=1",
+   "状态": "一致"
+  },
+  {
+   "键": "FCharacterDeathInfo::bForceDied",
+   "源": "结构",
+   "功": [
+    "死亡判定"
+   ],
+   "现行": 1,
+   "现行原文": "0x01",
+   "断言": "SDK::FCharacterDeathInfo::bForceDied",
+   "断言值": null,
+   "说明": "",
+   "位宽": 1,
+   "值": 1,
+   "类型": "bool",
+   "大小": 1,
+   "宿主": "FCharacterDeathInfo",
+   "证据": "FCharacterDeathInfo::bForceDied @0x1 size=1",
+   "状态": "一致"
+  },
+  {
+   "键": "FCharacterDeathInfo::Timestamp",
+   "源": "结构",
+   "功": [
+    "死亡判定"
+   ],
+   "现行": 4,
+   "现行原文": "0x04",
+   "断言": "SDK::FCharacterDeathInfo::Timestamp",
+   "断言值": null,
+   "说明": "",
+   "位宽": 4,
+   "值": 4,
+   "类型": "float",
+   "大小": 4,
+   "宿主": "FCharacterDeathInfo",
+   "证据": "FCharacterDeathInfo::Timestamp @0x4 size=4",
+   "状态": "一致"
+  },
+  {
+   "键": "FCharacterDeathInfo::DeathCount",
+   "源": "结构",
+   "功": [
+    "死亡判定"
+   ],
+   "现行": 8,
+   "现行原文": "0x08",
+   "断言": "SDK::FCharacterDeathInfo::DeathCount",
+   "断言值": null,
+   "说明": "",
+   "位宽": 4,
+   "值": 8,
+   "类型": "int32",
+   "大小": 4,
+   "宿主": "FCharacterDeathInfo",
+   "证据": "FCharacterDeathInfo::DeathCount @0x8 size=4",
+   "状态": "一致"
+  },
+  {
+   "键": "USGCharacterArmorManagerComponent::ArmorList",
+   "源": "类",
+   "功": [
+    "头甲"
+   ],
+   "现行": 608,
+   "现行原文": "0x260",
+   "断言": "SDK::USGCharacterArmorManagerComponent::ArmorList",
+   "断言值": null,
+   "说明": "★头甲链中段。TArray<ASGInventory*>，[0]/[1] 分别对应 头/甲",
+   "位宽": 16,
+   "值": 608,
+   "类型": "TArray",
+   "大小": 16,
+   "宿主": "USGCharacterArmorManagerComponent",
+   "证据": "USGCharacterArmorManagerComponent::ArmorList @0x260 size=16",
+   "状态": "一致"
+  },
+  {
+   "键": "ASGInventory::ArmorLevel",
+   "源": "类",
+   "功": [
+    "头甲"
+   ],
+   "现行": 1840,
+   "现行原文": "0x730",
+   "断言": "SDK::ASGInventory::ArmorLevel",
+   "断言值": null,
+   "说明": "★头甲链末端。uint32，就是屏幕上那个数",
+   "位宽": 4,
+   "值": 1840,
+   "类型": "uint32",
+   "大小": 4,
+   "宿主": "ASGInventory",
+   "证据": "ASGInventory::ArmorLevel @0x730 size=4",
+   "状态": "一致"
+  },
+  {
+   "键": "头甲::护甲管理器槽位",
+   "源": "锚",
+   "功": [
+    "头甲"
+   ],
+   "现行": 6776,
+   "现行原文": "0x1A78",
+   "断言": "SDK::头甲链::护甲管理器缓存槽",
+   "断言值": 416,
+   "说明": "参考实现 0x10009106c 实证：p1 = read64(角色 + 0x1A78)。注意 0x1A78 = CmpCacheArray(0x18D8) + 0x1A0 = 第 52 号缓存槽，不是独立字段 → 更稳的写法是按类名在组件表里找 SGCharacterArmorManagerComponent （断言的是「槽位差值」0x1A0；绝对值 = CmpCacheArray + 它）",
+   "位宽": 8,
+   "值": 6776,
+   "证据": "锚 ASGCharacter::CmpCacheArray @0x18D8 +416 → 0x1A78（左邻 CmpCacheArray@0x18D8，右邻 CmpCacheInit@0x1AF0）",
+   "状态": "一致"
+  },
+  {
+   "键": "ASGTacticalCharacter::CharacterWeaponManagerComponent",
+   "源": "类",
+   "功": [
+    "无后坐力"
+   ],
+   "现行": 2040,
+   "现行原文": "0x07F8",
+   "断言": "SDK::ASGTacticalCharacter::CharacterWeaponManagerComponent",
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "值": 2040,
+   "类型": "USGCharacterWeaponManagerComponent",
+   "大小": 8,
+   "宿主": "ASGTacticalCharacter",
+   "证据": "ASGTacticalCharacter::CharacterWeaponManagerComponent @0x7F8 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "USGCharacterWeaponManagerComponent::CurrentWeapon",
+   "源": "类",
+   "功": [
+    "无后坐力"
+   ],
+   "现行": 304,
+   "现行原文": "0x130",
+   "断言": "SDK::USGCharacterWeaponManagerComponent::CurrentWeapon",
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "值": 304,
+   "类型": "ASGInventory",
+   "大小": 8,
+   "宿主": "USGCharacterWeaponManagerComponent",
+   "证据": "USGCharacterWeaponManagerComponent::CurrentWeapon @0x130 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "USGCharacterWeaponManagerComponent::LeftHandWeapon",
+   "源": "类",
+   "功": [
+    "无后坐力"
+   ],
+   "现行": 296,
+   "现行原文": "0x128",
+   "断言": "SDK::USGCharacterWeaponManagerComponent::LeftHandWeapon",
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "值": 296,
+   "类型": "ASGInventory",
+   "大小": 8,
+   "宿主": "USGCharacterWeaponManagerComponent",
+   "证据": "USGCharacterWeaponManagerComponent::LeftHandWeapon @0x128 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "USGCharacterWeaponManagerComponent::TacticalWeapon",
+   "源": "类",
+   "功": [
+    "无后坐力"
+   ],
+   "现行": 312,
+   "现行原文": "0x138",
+   "断言": "SDK::USGCharacterWeaponManagerComponent::TacticalWeapon",
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "值": 312,
+   "类型": "ASGInventory",
+   "大小": 8,
+   "宿主": "USGCharacterWeaponManagerComponent",
+   "证据": "USGCharacterWeaponManagerComponent::TacticalWeapon @0x138 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "ASGWeapon::WeaponCmpCacheArray",
+   "源": "类",
+   "功": [
+    "无后坐力"
+   ],
+   "现行": 2976,
+   "现行原文": "0x0BA0",
+   "断言": "SDK::ASGWeapon组件表::WeaponCmpCacheArray",
+   "断言值": null,
+   "说明": "",
+   "位宽": 152,
+   "值": 2976,
+   "类型": "UActorComponent",
+   "大小": 152,
+   "宿主": "ASGWeapon",
+   "证据": "ASGWeapon::WeaponCmpCacheArray @0xBA0 size=152",
+   "状态": "一致"
+  },
+  {
+   "键": "ASGWeapon::WeaponCmpCacheArray槽数",
+   "源": "原生",
+   "功": [
+    "无后坐力"
+   ],
+   "现行": 19,
+   "现行原文": "0x13",
+   "断言": null,
+   "断言值": null,
+   "说明": "= 152/8",
+   "位宽": null,
+   "状态": "不适用",
+   "值": 19,
+   "证据": "该来源不由反射 dump 决定（引擎native）"
+  },
+  {
+   "键": "ASGInventory::CmpCacheArray",
+   "源": "类",
+   "功": [
+    "无后坐力"
+   ],
+   "现行": 2136,
+   "现行原文": "0x0858",
+   "断言": "SDK::ASGInventory组件表::CmpCacheArray",
+   "断言值": null,
+   "说明": "",
+   "位宽": 120,
+   "值": 2136,
+   "类型": "UActorComponent",
+   "大小": 120,
+   "宿主": "ASGInventory",
+   "证据": "ASGInventory::CmpCacheArray @0x858 size=120",
+   "状态": "一致"
+  },
+  {
+   "键": "ASGInventory::CmpCacheArray槽数",
+   "源": "原生",
+   "功": [
+    "无后坐力"
+   ],
+   "现行": 15,
+   "现行原文": "0x0F",
+   "断言": null,
+   "断言值": null,
+   "说明": "= 120/8",
+   "位宽": null,
+   "状态": "不适用",
+   "值": 15,
+   "证据": "该来源不由反射 dump 决定（引擎native）"
+  },
+  {
+   "键": "USGWeaponRecoilComponent::RepRecoilInfo",
+   "源": "类",
+   "功": [
+    "无后坐力"
+   ],
+   "现行": 248,
+   "现行原文": "0x0F8",
+   "断言": "SDK::USGWeaponRecoilComponent::RepRecoilInfo",
+   "断言值": null,
+   "说明": "",
+   "位宽": 48,
+   "值": 248,
+   "类型": "FWeaponRecoilRepInfo",
+   "大小": 48,
+   "宿主": "USGWeaponRecoilComponent",
+   "证据": "USGWeaponRecoilComponent::RepRecoilInfo @0xF8 size=48",
+   "状态": "一致"
+  },
+  {
+   "键": "USGWeaponRecoilComponent::bEnableRecoil_Pitch",
+   "源": "类",
+   "功": [
+    "无后坐力"
+   ],
+   "现行": 328,
+   "现行原文": "0x148",
+   "断言": "SDK::USGWeaponRecoilComponent::bEnableRecoil_Pitch",
+   "断言值": null,
+   "说明": "",
+   "位宽": 1,
+   "值": 328,
+   "类型": "bool",
+   "大小": 1,
+   "宿主": "USGWeaponRecoilComponent",
+   "证据": "USGWeaponRecoilComponent::bEnableRecoil_Pitch @0x148 size=1",
+   "状态": "一致"
+  },
+  {
+   "键": "USGWeaponRecoilComponent::bEnableRecoil_Yaw",
+   "源": "类",
+   "功": [
+    "无后坐力"
+   ],
+   "现行": 329,
+   "现行原文": "0x149",
+   "断言": "SDK::USGWeaponRecoilComponent::bEnableRecoil_Yaw",
+   "断言值": null,
+   "说明": "",
+   "位宽": 1,
+   "值": 329,
+   "类型": "bool",
+   "大小": 1,
+   "宿主": "USGWeaponRecoilComponent",
+   "证据": "USGWeaponRecoilComponent::bEnableRecoil_Yaw @0x149 size=1",
+   "状态": "一致"
+  },
+  {
+   "键": "USGWeaponRecoilComponent::MaxVerticalRecoil",
+   "源": "类",
+   "功": [
+    "无后坐力"
+   ],
+   "现行": 336,
+   "现行原文": "0x150",
+   "断言": "SDK::USGWeaponRecoilComponent::MaxVerticalRecoil",
+   "断言值": null,
+   "说明": "只读不动它，免得触发除零",
+   "位宽": 4,
+   "值": 336,
+   "类型": "float",
+   "大小": 4,
+   "宿主": "USGWeaponRecoilComponent",
+   "证据": "USGWeaponRecoilComponent::MaxVerticalRecoil @0x150 size=4",
+   "状态": "一致"
+  },
+  {
+   "键": "USGWeaponRecoilComponent::MaxHorizontalRecoil",
+   "源": "类",
+   "功": [
+    "无后坐力"
+   ],
+   "现行": 340,
+   "现行原文": "0x154",
+   "断言": "SDK::USGWeaponRecoilComponent::MaxHorizontalRecoil",
+   "断言值": null,
+   "说明": "",
+   "位宽": 4,
+   "值": 340,
+   "类型": "float",
+   "大小": 4,
+   "宿主": "USGWeaponRecoilComponent",
+   "证据": "USGWeaponRecoilComponent::MaxHorizontalRecoil @0x154 size=4",
+   "状态": "一致"
+  },
+  {
+   "键": "USkeletalMesh::Skeleton",
+   "源": "类",
+   "功": [
+    "骨骼"
+   ],
+   "现行": 136,
+   "现行原文": "0x088",
+   "断言": "SDK::USkeletalMesh::Skeleton",
+   "断言值": null,
+   "说明": "",
+   "位宽": 8,
+   "值": 136,
+   "类型": "USkeleton",
+   "大小": 8,
+   "宿主": "USkeletalMesh",
+   "证据": "USkeletalMesh::Skeleton @0x88 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "USkeletalMesh::参考骨架扫描窗口",
+   "源": "锚",
+   "功": [
+    "骨骼"
+   ],
+   "现行": null,
+   "现行原文": "0x080~0x3B8",
+   "断言": null,
+   "断言值": null,
+   "说明": "RefSkeleton 被 dump 当空结构吞了 → 只能在这个窗口里扫。上界 0x3B8 就是 dump 给的 __MDKClassSize(952)，跟着它走",
+   "位宽": null,
+   "状态": "参考",
+   "值": null,
+   "证据": "锚 = USkeletalMesh::__MDKClassSize @0x3B8（跟随锚，不产生绝对值）",
+   "锚当前": 952
+  },
+  {
+   "键": "USkeleton::BoneTree",
+   "源": "类",
+   "功": [
+    "骨骼"
+   ],
+   "现行": 56,
+   "现行原文": "0x038",
+   "断言": "SDK::USkeleton::BoneTree",
+   "断言值": null,
+   "说明": "❗dump 明确标注此字段 + FBoneNode::Name / ParentIndex 均为 Deprecated（运行时引擎不写值）→ 这条路是死的，别当主路",
+   "位宽": 16,
+   "值": 56,
+   "类型": "TArray",
+   "大小": 16,
+   "宿主": "USkeleton",
+   "证据": "USkeleton::BoneTree @0x38 size=16",
+   "状态": "一致"
+  },
+  {
+   "键": "USkeleton::参考骨架扫描窗口",
+   "源": "原生",
+   "功": [
+    "骨骼"
+   ],
+   "现行": null,
+   "现行原文": "0x030~0x140",
+   "断言": null,
+   "断言值": null,
+   "说明": "兜底：往骨架资产里再扫一层",
+   "位宽": null,
+   "状态": "不适用",
+   "值": null,
+   "证据": "该来源不由反射 dump 决定（引擎native）"
+  },
+  {
+   "键": "FBoneNode::Name",
+   "源": "类",
+   "功": [
+    "骨骼"
+   ],
+   "现行": 0,
+   "现行原文": "0x00",
+   "断言": "SDK::FBoneNode::Name",
+   "断言值": null,
+   "说明": "Deprecated，恒 NAME_None",
+   "位宽": 8,
+   "值": 0,
+   "类型": "FName",
+   "大小": 8,
+   "宿主": "FBoneNode",
+   "证据": "FBoneNode::Name @0x0 size=8",
+   "状态": "一致"
+  },
+  {
+   "键": "FBoneNode::ParentIndex",
+   "源": "类",
+   "功": [
+    "骨骼"
+   ],
+   "现行": 8,
+   "现行原文": "0x08",
+   "断言": "SDK::FBoneNode::ParentIndex",
+   "断言值": null,
+   "说明": "Deprecated",
+   "位宽": 4,
+   "值": 8,
+   "类型": "int32",
+   "大小": 4,
+   "宿主": "FBoneNode",
+   "证据": "FBoneNode::ParentIndex @0x8 size=4",
+   "状态": "一致"
+  },
+  {
+   "键": "FBoneNode::步进",
+   "源": "原生",
+   "功": [
+    "骨骼"
+   ],
+   "现行": 16,
+   "现行原文": "0x10",
+   "断言": null,
+   "断言值": null,
+   "说明": "",
+   "位宽": null,
+   "状态": "不适用",
+   "值": 16,
+   "证据": "该来源不由反射 dump 决定（引擎native）"
+  },
+  {
+   "键": "FMeshBoneInfo::Name",
+   "源": "原生",
+   "功": [
+    "骨骼"
+   ],
+   "现行": 0,
+   "现行原文": "0x00",
+   "断言": null,
+   "断言值": null,
+   "说明": "❗dump 的结构体表里没有 FMeshBoneInfo（未反射）→ 靠 FReferenceSkeleton 内联布局 + 运行期校验",
+   "位宽": null,
+   "状态": "不适用",
+   "值": 0,
+   "证据": "该来源不由反射 dump 决定（引擎native）"
+  },
+  {
+   "键": "FMeshBoneInfo::父索引",
+   "源": "原生",
+   "功": [
+    "骨骼"
+   ],
+   "现行": 8,
+   "现行原文": "0x08",
+   "断言": null,
+   "断言值": null,
+   "说明": "",
+   "位宽": null,
+   "状态": "不适用",
+   "值": 8,
+   "证据": "该来源不由反射 dump 决定（引擎native）"
+  },
+  {
+   "键": "FMeshBoneInfo::步进甲",
+   "源": "原生",
+   "功": [
+    "骨骼"
+   ],
+   "现行": 12,
+   "现行原文": "0x0C",
+   "断言": null,
+   "断言值": null,
+   "说明": "",
+   "位宽": null,
+   "状态": "不适用",
+   "值": 12,
+   "证据": "该来源不由反射 dump 决定（引擎native）"
+  },
+  {
+   "键": "FMeshBoneInfo::步进乙",
+   "源": "原生",
+   "功": [
+    "骨骼"
+   ],
+   "现行": 16,
+   "现行原文": "0x10",
+   "断言": null,
+   "断言值": null,
+   "说明": "",
+   "位宽": null,
+   "状态": "不适用",
+   "值": 16,
+   "证据": "该来源不由反射 dump 决定（引擎native）"
+  },
+  {
+   "键": "骨骼::18个下标表",
+   "源": "参考实现",
+   "功": [
+    "骨骼"
+   ],
+   "现行": null,
+   "现行原文": "[16,15,14,13,12,1,53,54,56,23,24,26,2,4,5,7,9,10]",
+   "断言": null,
+   "断言值": null,
+   "说明": "参考实现 0x100091dbc 实证：表地址 0x100C17338 + i*4，循环 18 次(cmp x28,#0x12)。这是那个 App 自带的常量表，不是游戏数据 → 游戏更新也不变，永远不用重算",
+   "位宽": null,
+   "状态": "不适用",
+   "值": null,
+   "证据": "该来源不由反射 dump 决定（参考App常量）"
+  },
+  {
+   "键": "骨骼::17段连线表",
+   "源": "参考实现",
+   "功": [
+    "骨骼"
+   ],
+   "现行": null,
+   "现行原文": "17段",
+   "断言": null,
+   "断言值": null,
+   "说明": "同上，App 自带常量",
+   "位宽": null,
+   "状态": "不适用",
+   "值": null,
+   "证据": "该来源不由反射 dump 决定（参考App常量）"
+  },
+  {
+   "键": "内核::proc_find / proc_task / kread64 / kread_ptr / vreadbuf / vwritebuf / jbdInitPPLRW",
+   "源": "内核",
+   "功": [
+    "内核链"
+   ],
+   "现行": null,
+   "现行原文": "libjailbreak 符号",
+   "断言": null,
+   "断言值": null,
+   "说明": "全部由 dlsym 从 libjailbreak.dylib 取，不是固定地址。与游戏版本无关，游戏更新不用动",
+   "位宽": null,
+   "状态": "不适用",
+   "值": null,
+   "证据": "该来源不由反射 dump 决定（jailbreak符号）"
+  },
+  {
+   "键": "内核::页表句柄公式",
+   "源": "内核",
+   "功": [
+    "内核链"
+   ],
+   "现行": null,
+   "现行原文": "kread64(kread_ptr(kread_ptr(task+0x28)+0x40)+8)",
+   "断言": null,
+   "断言值": null,
+   "说明": "task 结构偏移属于 XNU 内核，跟 iOS 版本走、不跟游戏走",
+   "位宽": null,
+   "状态": "不适用",
+   "值": null,
+   "证据": "该来源不由反射 dump 决定（jailbreak符号）"
+  },
+  {
+   "键": "内核::vreadbuf 签名",
+   "源": "内核",
+   "功": [
+    "内核链"
+   ],
+   "现行": null,
+   "现行原文": "vreadbuf(页表, 地址, 缓冲, 长度)",
+   "断言": null,
+   "断言值": null,
+   "说明": "四参调用，别改成三参",
+   "位宽": null,
+   "状态": "不适用",
+   "值": null,
+   "证据": "该来源不由反射 dump 决定（jailbreak符号）"
+  }
+ ]
+}
