@@ -8,10 +8,19 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
-    runs-on: macos-14          # 自带 Xcode 15 + iOS SDK
-    timeout-minutes: 45
+    # 免费账户的 macOS 池经常排不上(排队 20 分钟直接被取消), 双镜像一起碰运气,
+    # 哪个先拿到机器哪个出包, 互不影响。
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14, macos-13]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
 
     steps:
       - name: 拉代码
@@ -37,6 +46,6 @@ jobs:
       - name: 上传 tipa
         uses: actions/upload-artifact@v4
         with:
-          name: 地图-tipa
+          name: 地图-tipa-${{ matrix.os }}
           path: 地图.tipa
           if-no-files-found: error
