@@ -1101,8 +1101,20 @@ void* 子线程(void*) {
         };
 
         // ---- 2. World ----
+        // ★ 无畏契约无全局 GWorld 符号（SDK::GWorld = 0），改走 GEngine 链：
+        //   GEngine 全局变量存的是 UEngine* 指针（非内联），先读实例，再走偏移：
+        //   读 GEngine* → +0x07D8 GameViewport → +0x70 World
+        //   旧写法读「模块地址 + 0」= Mach-O 头，永远非法，所以相机一直重认失败、没框。
         g_链路.断点 = "World";
-        uint64_t World = kfd.取vreadbuf<uint64_t>(绘制类型.模块地址 + SDK::GWorld);
+        uint64_t Engine = kfd.取vreadbuf<uint64_t>(绘制类型.模块地址 + SDK::GEngine);
+        uint64_t GameViewport = 0;
+        uint64_t World = 0;
+        if (kfd.地址判断(Engine)) {
+            GameViewport = kfd.取vreadbuf<uint64_t>(Engine + SDK::UEngine::GameViewport);
+        };
+        if (kfd.地址判断(GameViewport)) {
+            World = kfd.取vreadbuf<uint64_t>(GameViewport + SDK::UGameViewportClient::World);
+        };
         if (!kfd.地址判断(World)) {
             自身数据.清空();      // ★ 只清角色, 相机/自己留着(下一版起不再因一步失败就全灭)
             continue;

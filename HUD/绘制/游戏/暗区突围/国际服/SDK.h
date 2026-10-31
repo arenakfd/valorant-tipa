@@ -48,11 +48,12 @@ namespace UObject {
 }
 
 // ======================= 世界遍历（无畏契约走 GEngine，GWorld 无符号） =======================
-// GEngine(0x0A1549F8) → +0x210 GameViewport → +0x70 World → +0x30 PersistentLevel → +0x98 Actors[]
-// 依据：StructsInfo.json 里 UEngine::GameViewport = 528 = 0x210
-//       Engine_classes.hpp UGameViewportClient::World = 0x70
+// GEngine(0x0A1549F8) → +0x07D8 GameViewport → +0x70 World → +0x30 PersistentLevel → +0x98 Actors[]
+// 依据：Engine_classes.hpp 54437 行 UEngine::GameViewport = 0x07D8（实例指针）
+//       44891 行 UGameViewportClient::World = 0x70
+//       注意：0x110 是 GameViewportClientClass（TSubclassOf 类对象），不是实例指针，别搞混
 namespace UEngine {
-    constexpr uint64_t GameViewport       = 0x210;  // UGameViewportClient*（StructsInfo 实证）
+    constexpr uint64_t GameViewport       = 0x07D8;  // UGameViewportClient*（Engine_classes.hpp:54437）
     constexpr uint64_t OwningGameInstance = 0x218;  // UGameInstance*
 }
 namespace UGameViewportClient {
