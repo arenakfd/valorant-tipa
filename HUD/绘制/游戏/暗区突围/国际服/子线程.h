@@ -581,6 +581,80 @@ uint64_t 找类增量(uint64_t 模块地址, const string& 目标名, bool& 完�
     return 0;
 };
 
+// ============================================================================
+//  ★ r41 根治"相机重认中 / 没框" —— 找 GameEngine 实例(不是读 GEngine 符号)
+//
+//  病根(已用 OffsetsInfo.json + GObjects-Dump.txt 双重验证):
+//    无畏契约的 OFFSET_GWORLD = 0, 且根本没有导出 GEngine 全局符号;
+//    CppSDK 里那个 GEngine = 0x10A1549F8 是"装饰值", dump 官方注释自己都写了
+//    "GEngine and GWorld offset are not used by the SDK, it's just there for
+//     decoration, use the provided UEngine::GetEngine() instead"。
+//    UEngine::GetEngine() 的权威实现 = 遍历 GObjects 找 UEngine 实例,
+//    根本不读 GEngine 符号。所以上一版"模块地址 + 0x0A1549F8 读指针"读到垃圾,
+//    GameViewport→World 整条链从第一跳就断 → 相机永远重认失败 → 没框。
+//
+//  修法(走 dump 唯一可信入口 OFFSET_GOBJECTS):
+//    增量遍历 GObjects, 找"类名含 GameEngine 的实例对象"(非 CDO/非 UClass),
+//    拿到实例后走 +0x07D8 GameViewport → +0x70 World, 与 dump 对象树完全对上:
+//      CodeVGameEngine Transient.CodeVGameEngine_2147482591
+//        └─ GameViewportClient_2147482428
+//        └─ CodeVGameInstance_2147482581
+//  找到后缓存, 换局才重扫(实例在单局内稳定, 跟相机一样)。
+// ============================================================================
+struct 找引擎任务 {
+    int      游标 = 0;
+    uint64_t 结果 = 0;
+    bool     完成 = false;
+};
+找引擎任务 g_找引擎任务;
+uint64_t g_引擎实例缓存 = 0;   // 找到一次就缓存, 不用每帧重扫
+
+uint64_t 找引擎实例增量(uint64_t 模块地址, bool& 完成) {
+    完成 = false;
+
+    // 已缓存且还合法 → 直接返回
+    if (kfd.地址判断(g_引擎实例缓存)) { 完成 = true; return g_引擎实例缓存; };
+    if (g_找引擎任务.完成) { 完成 = true; return g_找引擎任务.结果; };
+
+    if (!定位对象数组(模块地址)) return 0;
+
+    uint64_t 池 = g_名字池 ? g_名字池 : (模块地址 + SDK::GNames);
+
+    int 结束 = g_找引擎任务.游标 + 找类每轮步长;
+    if (结束 > g_对象数) 结束 = g_对象数;
+
+    for (int i = g_找引擎任务.游标; i < 结束; i++) {
+        uint64_t 对象 = 取对象(i);
+        if (!kfd.地址判断(对象)) continue;
+
+        // 读对象的类(ClassPrivate), 再读类的名字 = 类名
+        uint64_t 类 = kfd.取vreadbuf<uint64_t>(对象 + SDK::UObject::ClassPrivate);
+        if (!kfd.地址判断(类)) continue;
+        string 类名 = 取对象名(类, 池);
+        if (类名.empty() || !名字可读(类名)) continue;
+
+        // 只要类名含 "GameEngine" 且对象本身不是 CDO(名字不含 Default__) 就算实例
+        //   CodeVGameEngine / GameEngine 都命中; CDO 名是 "Default__CodeVGameEngine", 跳过
+        if (类名.find("GameEngine") == string::npos) continue;
+        string 对象名 = 取对象名(对象, 池);
+        if (对象名.find("Default__") != string::npos) continue;
+
+        g_找引擎任务.结果 = 对象;
+        g_找引擎任务.完成 = true;
+        g_引擎实例缓存 = 对象;
+        完成 = true;
+        return 对象;
+    };
+
+    g_找引擎任务.游标 = 结束;
+    if (g_找引擎任务.游标 >= g_对象数) {
+        g_找引擎任务.完成 = true;
+        完成 = true;
+        return 0;
+    };
+    return 0;
+};
+
 // 对象的类是否继承自 目标基类
 bool 是子类(uint64_t 类, uint64_t 目标基类) {
     if (!kfd.地址判断(类) || !kfd.地址判断(目标基类)) return false;
@@ -1101,16 +1175,22 @@ void* 子线程(void*) {
         };
 
         // ---- 2. World ----
-        // ★ 无畏契约无全局 GWorld 符号（SDK::GWorld = 0），改走 GEngine 链：
-        //   GEngine 全局变量存的是 UEngine* 指针（非内联），先读实例，再走偏移：
-        //   读 GEngine* → +0x07D8 GameViewport → +0x70 World
-        //   旧写法读「模块地址 + 0」= Mach-O 头，永远非法，所以相机一直重认失败、没框。
+        // ★ r41 根治: 无畏契约无 GWorld 符号、GEngine 符号也是装饰值, 直接读必得垃圾。
+        //   正确路线: 遍历 GObjects 找 GameEngine 实例(CodeVGameEngine) →
+        //             +0x07D8 GameViewport → +0x70 World
         g_链路.断点 = "World";
-        uint64_t Engine = kfd.取vreadbuf<uint64_t>(绘制类型.模块地址 + SDK::GEngine);
         uint64_t GameViewport = 0;
         uint64_t World = 0;
-        if (kfd.地址判断(Engine)) {
-            GameViewport = kfd.取vreadbuf<uint64_t>(Engine + SDK::UEngine::GameViewport);
+        {
+            bool 引擎完成 = false;
+            uint64_t Engine = 找引擎实例增量(绘制类型.模块地址, 引擎完成);
+            if (kfd.地址判断(Engine)) {
+                GameViewport = kfd.取vreadbuf<uint64_t>(Engine + SDK::UEngine::GameViewport);
+            } else if (引擎完成 && !kfd.地址判断(Engine)) {
+                // 扫完整张表都没有 → 重扫一遍(游戏可能刚重建引擎实例)
+                g_找引擎任务 = 找引擎任务();
+                g_引擎实例缓存 = 0;
+            };
         };
         if (kfd.地址判断(GameViewport)) {
             World = kfd.取vreadbuf<uint64_t>(GameViewport + SDK::UGameViewportClient::World);
@@ -1169,6 +1249,12 @@ void* 子线程(void*) {
                                (World != g_上轮World || PlayerController != g_上轮控制器);
             const bool 被请求 = g_要重认相机;
             g_要重认相机 = false;    // 无论做不做都清掉 —— 主线程是每帧无条件置位的
+
+            // r41: 换局可能连 GameEngine 实例都换(引擎重建), 清缓存让下一轮重扫
+            if (换局了) {
+                g_引擎实例缓存 = 0;
+                g_找引擎任务 = 找引擎任务();
+            };
 
             const bool 该验心跳 = ((心跳计数 % 4) == 0) || 换局了 || 被请求;
             if (!该验心跳) {
