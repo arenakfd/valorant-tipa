@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: macos-14          # 自带 Xcode 15 + iOS SDK
+    runs-on: macos-15          # 自带 Xcode 15 + iOS SDK
     timeout-minutes: 60
 
     steps:
