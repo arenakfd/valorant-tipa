@@ -2,6 +2,9 @@ name: build-tipa
 
 # 出的是 Xcode 编出来的 .app → Build.sh 打成的 .tipa (TrollStore 装)
 # 工程本体就是 地图.xcodeproj (app target), 不用 dylib/deb 那套
+#
+# 单一 macos-14：macos-13 镜像 2025 年已退役，池子里没有这种 runner，会永远排队。
+# 一次只触发一个 run，避免免费账户 macOS 并发队列满了导致新 job 秒取消。
 
 on:
   push:
@@ -13,13 +16,7 @@ permissions:
 
 jobs:
   build:
-    # 免费账户的 macOS 池经常排不上(排队 20 分钟直接被取消), 双镜像一起碰运气,
-    # 哪个先拿到机器哪个出包, 互不影响。
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [macos-14, macos-13]
-    runs-on: ${{ matrix.os }}
+    runs-on: macos-14
     timeout-minutes: 60
 
     steps:
@@ -46,6 +43,6 @@ jobs:
       - name: 上传 tipa
         uses: actions/upload-artifact@v4
         with:
-          name: 地图-tipa-${{ matrix.os }}
+          name: 地图-tipa
           path: 地图.tipa
           if-no-files-found: error
