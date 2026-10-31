@@ -1,0 +1,42 @@
+name: build-tipa
+
+# 出的是 Xcode 编出来的 .app → Build.sh 打成的 .tipa (TrollStore 装)
+# 工程本体就是 地图.xcodeproj (app target), 不用 dylib/deb 那套
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-14          # 自带 Xcode 15 + iOS SDK
+    timeout-minutes: 45
+
+    steps:
+      - name: 拉代码
+        uses: actions/checkout@v4
+
+      - name: 看 Xcode 版本
+        run: |
+          xcodebuild -version
+          xcode-select -p
+
+      - name: 装 ldid (Build.sh 里签名要用)
+        run: |
+          if [ ! -x /opt/homebrew/bin/ldid ]; then
+            brew install ldid
+          fi
+          /opt/homebrew/bin/ldid -v || true
+
+      - name: 编 .app 并打 .tipa
+        run: |
+          chmod +x build_tipa.sh Build.sh
+          ./build_tipa.sh
+
+      - name: 上传 tipa
+        uses: actions/upload-artifact@v4
+        with:
+          name: 地图-tipa
+          path: 地图.tipa
+          if-no-files-found: error
