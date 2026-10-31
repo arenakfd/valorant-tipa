@@ -122,11 +122,33 @@ namespace FMinimalViewInfo {
     constexpr uint64_t FOV      = 0x24;   // float
 }
 
+// ---- 补：暗区调用方用的完整 FMinimalViewInfo 字段（UE4 标准布局，无畏同源）----
+namespace FMinimalViewInfo补 {
+    constexpr uint64_t Location     = 0x00;  // FVector
+    constexpr uint64_t Rotation     = 0x18;  // FRotator (无畏比暗区多了 LocationExcludeOffset 0x0C)
+    constexpr uint64_t FOV          = 0x24;  // float
+    constexpr uint64_t DesiredFOV   = 0x28;  // float
+    constexpr uint64_t AspectRatio  = 0x3C;  // float   锁定的宽高比
+    constexpr uint64_t bConstrainAspectRatio = 0x40; // uint8 bit0  是否锁宽高比
+    constexpr uint64_t FOVMode      = 0x41;  // uint8  无畏无FOVMode字段, 用 ProjectionMode(0x41)
+    constexpr uint64_t OffCenterProjectionOffset = 0x5B0; // FVector2D 偏心投影
+}
+
+// ---- 补：FOV 模式枚举（dump: enum EECameraFOVMode）----
+namespace FOV模式 {
+    constexpr uint8_t 水平         = 0;   // HorizontalFOV
+    constexpr uint8_t 垂直         = 1;   // VerticalFOV
+    constexpr uint8_t 固定比例垂直 = 2;   // FixedAspectVerticalFOV
+}
+
 // ======================= FTransform / FMatrix =======================
 namespace FTransform {
     constexpr uint64_t rotation    = 0x00;  // FQuat
     constexpr uint64_t translation = 0x10;  // FVector
     constexpr uint64_t scale       = 0x1C;  // FVector
+    // 暗区调用方用大写别名
+    constexpr uint64_t Rotation    = 0x00;  // = rotation
+    constexpr uint64_t Scale3D     = 0x1C;  // = scale
 }
 
 // ======================= 玩家名字 =======================
@@ -234,6 +256,9 @@ namespace FCharacterDeathInfo {
 }
 
 // ======================= TArray 通用 =======================
+// ---- 补：名单上限（暗区调用方引用）----
+constexpr int 候选名单上限 = 1024;
+
 namespace TArray长度 {
     constexpr uint64_t ArrayNum偏移 = 0x08;  // int32（TArray 第 2 个字段）
     constexpr uint64_t ArrayMax偏移 = 0x0C;  // int32
