@@ -2,7 +2,6 @@ name: build-tipa
 
 # 出的是 Xcode 编出来的 .app → Build.sh 打成的 .tipa (TrollStore 装)
 # 工程本体就是 地图.xcodeproj (app target), 不用 dylib/deb 那套
-# 完全对齐暗区(tgg-kfd)验证过的写法：单一 macos-14、无 matrix、无多余 permissions
 
 on:
   push:
@@ -11,8 +10,8 @@ on:
 
 jobs:
   build:
-    runs-on: macos-15          # 自带 Xcode 15 + iOS SDK
-    timeout-minutes: 60
+    runs-on: macos-15          # 自带 Xcode 16 + iOS SDK（macos-14 已退役）
+    timeout-minutes: 45
 
     steps:
       - name: 拉代码

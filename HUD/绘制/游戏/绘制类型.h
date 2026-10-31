@@ -72,8 +72,8 @@ struct 绘制帧 {
 };
 
 struct {
-    string 进程名 = "UAGame";
-    string 模块名 = "UAGame.app/UAGame";
+    string 进程名 = "CodeV";
+    string 模块名 = "CodeV.app/CodeV";
     uint64_t 模块地址;
     bool 内核;
     
