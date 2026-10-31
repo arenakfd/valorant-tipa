@@ -2,21 +2,16 @@ name: build-tipa
 
 # 出的是 Xcode 编出来的 .app → Build.sh 打成的 .tipa (TrollStore 装)
 # 工程本体就是 地图.xcodeproj (app target), 不用 dylib/deb 那套
-#
-# 单一 macos-14：macos-13 镜像 2025 年已退役，池子里没有这种 runner，会永远排队。
-# 一次只触发一个 run，避免免费账户 macOS 并发队列满了导致新 job 秒取消。
+# 完全对齐暗区(tgg-kfd)验证过的写法：单一 macos-14、无 matrix、无多余 permissions
 
 on:
   push:
     branches: [ main ]
   workflow_dispatch:
 
-permissions:
-  contents: write
-
 jobs:
   build:
-    runs-on: macos-14
+    runs-on: macos-14          # 自带 Xcode 15 + iOS SDK
     timeout-minutes: 60
 
     steps:
