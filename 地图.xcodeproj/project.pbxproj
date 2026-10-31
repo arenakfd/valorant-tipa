@@ -1,0 +1,711 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0FE5D2122F2F4FF800FD4AFC /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FE5D2112F2F4FF800FD4AFC /* Entitlements.plist */; };
+		0FE5D2142F2FA39300FD4AFC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE5D2132F2FA39300FD4AFC /* QuartzCore.framework */; };
+		0FE5D2372F2FA59C00FD4AFC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE5D2362F2FA59C00FD4AFC /* Security.framework */; };
+		0FE5D2392F2FA5A300FD4AFC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE5D2382F2FA5A300FD4AFC /* libz.tbd */; };
+		0FE5D23B2F2FA5A800FD4AFC /* libc.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE5D23A2F2FA5A800FD4AFC /* libc.tbd */; };
+		0FF70D152F29396E000942EC /* 环境隐藏.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0FF70D142F29396E000942EC /* 环境隐藏.mm */; settings = {COMPILER_FLAGS = "-mllvm -enable-bcfobf -mllvm -enable-cffobf -mllvm -enable-splitobf -mllvm -enable-subobf -mllvm -enable-indibran -mllvm -enable-strcry -mllvm -enable-funcwra"; }; };
+		914D3CA02F22757700BB8415 /* 伪装.mm in Sources */ = {isa = PBXBuildFile; fileRef = 914D3C9F2F22757700BB8415 /* 伪装.mm */; settings = {COMPILER_FLAGS = "-mllvm -enable-bcfobf -mllvm -enable-cffobf -mllvm -enable-splitobf -mllvm -enable-subobf -mllvm -enable-indibran -mllvm -enable-strcry -mllvm -enable-funcwra"; }; };
+		914F3F672F2074C400759379 /* 地图.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 914F3F662F2074C400759379 /* 地图.jpg */; };
+		914F3F6A2F20810300759379 /* 阿里巴巴惠普体.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 914F3F692F20810300759379 /* 阿里巴巴惠普体.ttf */; };
+		914F3F6C2F2082CD00759379 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 914F3F6B2F2082CD00759379 /* CoreGraphics.framework */; };
+		914F3F732F208F6F00759379 /* HUD.mm in Sources */ = {isa = PBXBuildFile; fileRef = 914F3F722F208F6F00759379 /* HUD.mm */; settings = {COMPILER_FLAGS = "-mllvm -enable-bcfobf -mllvm -enable-cffobf -mllvm -enable-splitobf -mllvm -enable-subobf -mllvm -enable-indibran -mllvm -enable-strcry -mllvm -enable-funcwra"; }; };
+		914F3F772F20916700759379 /* HUD控制器.mm in Sources */ = {isa = PBXBuildFile; fileRef = 914F3F762F20916700759379 /* HUD控制器.mm */; settings = {COMPILER_FLAGS = "-mllvm -enable-strcry -mllvm -enable-indibran -mllvm -enable-subobf -mllvm -enable-bcfobf"; }; };
+		914F3F842F2091DD00759379 /* imgui_tables.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 914F3F7B2F2091DD00759379 /* imgui_tables.cpp */; };
+		914F3F852F2091DD00759379 /* imgui_widgets.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 914F3F7C2F2091DD00759379 /* imgui_widgets.cpp */; };
+		914F3F862F2091DD00759379 /* imgui_demo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 914F3F7D2F2091DD00759379 /* imgui_demo.cpp */; };
+		914F3F872F2091DD00759379 /* imgui_draw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 914F3F7E2F2091DD00759379 /* imgui_draw.cpp */; };
+		914F3F882F2091DD00759379 /* imgui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 914F3F832F2091DD00759379 /* imgui.cpp */; };
+		914F3F8C2F2091EA00759379 /* imgui_impl_metal.mm in Sources */ = {isa = PBXBuildFile; fileRef = 914F3F8B2F2091EA00759379 /* imgui_impl_metal.mm */; };
+		914F3F8E2F20932C00759379 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 914F3F8D2F20932C00759379 /* Metal.framework */; };
+		914F3F902F20933000759379 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 914F3F8F2F20933000759379 /* MetalKit.framework */; };
+		914F3F962F20D77A00759379 /* 三角洲行动.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 914F3F952F20D77A00759379 /* 三角洲行动.jpg */; };
+		914F3F9A2F20E79E00759379 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 914F3F992F20E79E00759379 /* IOKit.framework */; };
+		91667A062F2C6868008D1957 /* 过直播.mm in Sources */ = {isa = PBXBuildFile; fileRef = 91667A052F2C6868008D1957 /* 过直播.mm */; settings = {COMPILER_FLAGS = "-mllvm -enable-bcfobf -mllvm -enable-cffobf -mllvm -enable-splitobf -mllvm -enable-subobf -mllvm -enable-indibran -mllvm -enable-strcry -mllvm -enable-funcwra"; }; };
+		91667A092F2DA380008D1957 /* 按钮存储.mm in Sources */ = {isa = PBXBuildFile; fileRef = 91667A082F2DA380008D1957 /* 按钮存储.mm */; settings = {COMPILER_FLAGS = "-mllvm -enable-bcfobf -mllvm -enable-cffobf -mllvm -enable-splitobf -mllvm -enable-subobf -mllvm -enable-indibran -mllvm -enable-strcry -mllvm -enable-funcwra"; }; };
+		918605B12F20598600B3A6D9 /* 主调用.mm in Sources */ = {isa = PBXBuildFile; fileRef = 918605B02F20598600B3A6D9 /* 主调用.mm */; settings = {COMPILER_FLAGS = "-mllvm -enable-bcfobf -mllvm -enable-cffobf -mllvm -enable-splitobf -mllvm -enable-subobf -mllvm -enable-indibran -mllvm -enable-strcry -mllvm -enable-funcwra"; }; };
+		918605B42F2059EA00B3A6D9 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 918605B32F2059E900B3A6D9 /* CoreFoundation.framework */; };
+		918605B82F205C6A00B3A6D9 /* 应用.mm in Sources */ = {isa = PBXBuildFile; fileRef = 918605B72F205C6A00B3A6D9 /* 应用.mm */; settings = {COMPILER_FLAGS = "-mllvm -enable-bcfobf -mllvm -enable-cffobf -mllvm -enable-splitobf -mllvm -enable-subobf -mllvm -enable-indibran -mllvm -enable-strcry -mllvm -enable-funcwra"; }; };
+		918605BA2F205CA900B3A6D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 918605B92F205CA900B3A6D9 /* Foundation.framework */; };
+		918605C02F205E8C00B3A6D9 /* BackBoardServices.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 918605BC2F205E8B00B3A6D9 /* BackBoardServices.tbd */; };
+		918605C12F205E8C00B3A6D9 /* SpringBoardServices.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 918605BD2F205E8B00B3A6D9 /* SpringBoardServices.tbd */; };
+		918605C22F205E8C00B3A6D9 /* GraphicsServices.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 918605BE2F205E8B00B3A6D9 /* GraphicsServices.tbd */; };
+		918605C32F205E8C00B3A6D9 /* AssertionServices.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 918605BF2F205E8B00B3A6D9 /* AssertionServices.tbd */; };
+		918605C52F205E9900B3A6D9 /* IOKit.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 918605C42F205E9900B3A6D9 /* IOKit.tbd */; };
+		918605C92F205EA500B3A6D9 /* libchoma.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 918605C72F205EA500B3A6D9 /* libchoma.dylib */; };
+		918605CD2F205ED600B3A6D9 /* libchoma.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 918605C72F205EA500B3A6D9 /* libchoma.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		918605CE2F205ED800B3A6D9 /* ljb_dp.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 918605C62F205EA500B3A6D9 /* ljb_dp.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		918605F22F30A00100B3A6D9 /* ljb_rh.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 918605F12F30A00100B3A6D9 /* ljb_rh.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		918605D82F20614500B3A6D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 918605D72F20614500B3A6D9 /* UIKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		918605CC2F205ED200B3A6D9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				918605CD2F205ED600B3A6D9 /* libchoma.dylib in CopyFiles */,
+				918605CE2F205ED800B3A6D9 /* ljb_dp.dylib in CopyFiles */,
+				918605F22F30A00100B3A6D9 /* ljb_rh.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0FE5D2112F2F4FF800FD4AFC /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		0FE5D2132F2FA39300FD4AFC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0FE5D2362F2FA59C00FD4AFC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		0FE5D2382F2FA5A300FD4AFC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		0FE5D23A2F2FA5A800FD4AFC /* libc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libc.tbd; path = usr/lib/libc.tbd; sourceTree = SDKROOT; };
+		0FF70D132F29396E000942EC /* 环境隐藏.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "环境隐藏.h"; sourceTree = "<group>"; };
+		0FF70D142F29396E000942EC /* 环境隐藏.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "环境隐藏.mm"; sourceTree = "<group>"; };
+		914D3C9F2F22757700BB8415 /* 伪装.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "伪装.mm"; sourceTree = "<group>"; };
+		914F3F662F2074C400759379 /* 地图.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "地图.jpg"; sourceTree = "<group>"; };
+		914F3F692F20810300759379 /* 阿里巴巴惠普体.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "阿里巴巴惠普体.ttf"; sourceTree = "<group>"; };
+		914F3F6B2F2082CD00759379 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		914F3F722F208F6F00759379 /* HUD.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HUD.mm; sourceTree = "<group>"; };
+		914F3F752F20915300759379 /* HUD控制器.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HUD控制器.h"; sourceTree = "<group>"; };
+		914F3F762F20916700759379 /* HUD控制器.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "HUD控制器.mm"; sourceTree = "<group>"; };
+		914F3F792F2091DD00759379 /* imstb_rectpack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imstb_rectpack.h; sourceTree = "<group>"; };
+		914F3F7A2F2091DD00759379 /* imconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imconfig.h; sourceTree = "<group>"; };
+		914F3F7B2F2091DD00759379 /* imgui_tables.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imgui_tables.cpp; sourceTree = "<group>"; };
+		914F3F7C2F2091DD00759379 /* imgui_widgets.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imgui_widgets.cpp; sourceTree = "<group>"; };
+		914F3F7D2F2091DD00759379 /* imgui_demo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imgui_demo.cpp; sourceTree = "<group>"; };
+		914F3F7E2F2091DD00759379 /* imgui_draw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imgui_draw.cpp; sourceTree = "<group>"; };
+		914F3F7F2F2091DD00759379 /* imgui_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imgui_internal.h; sourceTree = "<group>"; };
+		914F3F802F2091DD00759379 /* imstb_truetype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imstb_truetype.h; sourceTree = "<group>"; };
+		914F3F812F2091DD00759379 /* imstb_textedit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imstb_textedit.h; sourceTree = "<group>"; };
+		914F3F822F2091DD00759379 /* imgui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imgui.h; sourceTree = "<group>"; };
+		914F3F832F2091DD00759379 /* imgui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imgui.cpp; sourceTree = "<group>"; };
+		914F3F8A2F2091EA00759379 /* imgui_impl_metal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imgui_impl_metal.h; sourceTree = "<group>"; };
+		914F3F8B2F2091EA00759379 /* imgui_impl_metal.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = imgui_impl_metal.mm; sourceTree = "<group>"; };
+		914F3F8D2F20932C00759379 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		914F3F8F2F20933000759379 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		914F3F942F20D59A00759379 /* 伪装.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "伪装.h"; sourceTree = "<group>"; };
+		914F3F952F20D77A00759379 /* 三角洲行动.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "三角洲行动.jpg"; sourceTree = "<group>"; };
+		914F3F972F20E55300759379 /* 设备类型.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "设备类型.h"; sourceTree = "<group>"; };
+		914F3F982F20E67900759379 /* 绘图.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "绘图.h"; sourceTree = "<group>"; };
+		914F3F992F20E79E00759379 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		914F3FA02F20E99B00759379 /* kfd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kfd.h; sourceTree = "<group>"; };
+		915A76742F27745900B685BA /* FBSOrientationObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBSOrientationObserver.h; sourceTree = "<group>"; };
+		915A76752F27747900B685BA /* FBSOrientationUpdate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBSOrientationUpdate.h; sourceTree = "<group>"; };
+		91667A042F2C684F008D1957 /* 过直播.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "过直播.h"; sourceTree = "<group>"; };
+		91667A052F2C6868008D1957 /* 过直播.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "过直播.mm"; sourceTree = "<group>"; };
+		91667A072F2DA23E008D1957 /* 按钮存储.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "按钮存储.h"; sourceTree = "<group>"; };
+		91667A082F2DA380008D1957 /* 按钮存储.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "按钮存储.mm"; sourceTree = "<group>"; };
+		918605942F20574B00B3A6D9 /* 地图.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "地图.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		918605B02F20598600B3A6D9 /* 主调用.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "主调用.mm"; sourceTree = "<group>"; };
+		918605B32F2059E900B3A6D9 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		918605B52F205A1800B3A6D9 /* 头文件.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "头文件.h"; sourceTree = "<group>"; };
+		918605B72F205C6A00B3A6D9 /* 应用.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "应用.mm"; sourceTree = "<group>"; };
+		918605B92F205CA900B3A6D9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		918605BC2F205E8B00B3A6D9 /* BackBoardServices.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = BackBoardServices.tbd; sourceTree = "<group>"; };
+		918605BD2F205E8B00B3A6D9 /* SpringBoardServices.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = SpringBoardServices.tbd; sourceTree = "<group>"; };
+		918605BE2F205E8B00B3A6D9 /* GraphicsServices.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = GraphicsServices.tbd; sourceTree = "<group>"; };
+		918605BF2F205E8B00B3A6D9 /* AssertionServices.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = AssertionServices.tbd; sourceTree = "<group>"; };
+		918605C42F205E9900B3A6D9 /* IOKit.tbd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = IOKit.tbd; sourceTree = "<group>"; };
+		918605C62F205EA500B3A6D9 /* ljb_dp.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = ljb_dp.dylib; sourceTree = "<group>"; };
+		918605F12F30A00100B3A6D9 /* ljb_rh.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = ljb_rh.dylib; sourceTree = "<group>"; };
+		918605C72F205EA500B3A6D9 /* libchoma.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libchoma.dylib; sourceTree = "<group>"; };
+		918605CA2F205EA900B3A6D9 /* libproc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libproc.h; sourceTree = "<group>"; };
+		918605CB2F205EAD00B3A6D9 /* proc_info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = proc_info.h; sourceTree = "<group>"; };
+		918605D02F205F6600B3A6D9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		918605D72F20614500B3A6D9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		91FC43F02F21AFDE005ECDF3 /* 绘制类型.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "绘制类型.h"; sourceTree = "<group>"; };
+		91FC43F32F224FF4005ECDF3 /* 绘制算法.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "绘制算法.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		918605912F20574B00B3A6D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FE5D23B2F2FA5A800FD4AFC /* libc.tbd in Frameworks */,
+				0FE5D2392F2FA5A300FD4AFC /* libz.tbd in Frameworks */,
+				0FE5D2372F2FA59C00FD4AFC /* Security.framework in Frameworks */,
+				0FE5D2142F2FA39300FD4AFC /* QuartzCore.framework in Frameworks */,
+				918605C92F205EA500B3A6D9 /* libchoma.dylib in Frameworks */,
+				918605C52F205E9900B3A6D9 /* IOKit.tbd in Frameworks */,
+				918605C22F205E8C00B3A6D9 /* GraphicsServices.tbd in Frameworks */,
+				918605C32F205E8C00B3A6D9 /* AssertionServices.tbd in Frameworks */,
+				918605C02F205E8C00B3A6D9 /* BackBoardServices.tbd in Frameworks */,
+				918605C12F205E8C00B3A6D9 /* SpringBoardServices.tbd in Frameworks */,
+				914F3F9A2F20E79E00759379 /* IOKit.framework in Frameworks */,
+				918605D82F20614500B3A6D9 /* UIKit.framework in Frameworks */,
+				914F3F8E2F20932C00759379 /* Metal.framework in Frameworks */,
+				914F3F902F20933000759379 /* MetalKit.framework in Frameworks */,
+				918605BA2F205CA900B3A6D9 /* Foundation.framework in Frameworks */,
+				914F3F6C2F2082CD00759379 /* CoreGraphics.framework in Frameworks */,
+				918605B42F2059EA00B3A6D9 /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		914F3F652F2074A800759379 /* 图片 */ = {
+			isa = PBXGroup;
+			children = (
+				914F3F662F2074C400759379 /* 地图.jpg */,
+				914F3F952F20D77A00759379 /* 三角洲行动.jpg */,
+			);
+			path = "图片";
+			sourceTree = "<group>";
+		};
+		914F3F682F2080F600759379 /* 字体 */ = {
+			isa = PBXGroup;
+			children = (
+				914F3F692F20810300759379 /* 阿里巴巴惠普体.ttf */,
+			);
+			path = "字体";
+			sourceTree = "<group>";
+		};
+		914F3F712F208F5B00759379 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				915A76752F27747900B685BA /* FBSOrientationUpdate.h */,
+				915A76742F27745900B685BA /* FBSOrientationObserver.h */,
+				914F3F722F208F6F00759379 /* HUD.mm */,
+				914F3F742F20914200759379 /* 绘制 */,
+			);
+			path = HUD;
+			sourceTree = "<group>";
+		};
+		914F3F742F20914200759379 /* 绘制 */ = {
+			isa = PBXGroup;
+			children = (
+				914F3F982F20E67900759379 /* 绘图.h */,
+				914F3F972F20E55300759379 /* 设备类型.h */,
+				914F3F752F20915300759379 /* HUD控制器.h */,
+				914F3F762F20916700759379 /* HUD控制器.mm */,
+				91667A032F2C6833008D1957 /* 过直播 */,
+				914F3F9F2F20E98000759379 /* 内核 */,
+				914F3F9B2F20E86A00759379 /* 游戏 */,
+				914F3F782F2091C200759379 /* ImGui */,
+			);
+			path = "绘制";
+			sourceTree = "<group>";
+		};
+		914F3F782F2091C200759379 /* ImGui */ = {
+			isa = PBXGroup;
+			children = (
+				914F3F7A2F2091DD00759379 /* imconfig.h */,
+				914F3F7D2F2091DD00759379 /* imgui_demo.cpp */,
+				914F3F7E2F2091DD00759379 /* imgui_draw.cpp */,
+				914F3F7F2F2091DD00759379 /* imgui_internal.h */,
+				914F3F7B2F2091DD00759379 /* imgui_tables.cpp */,
+				914F3F7C2F2091DD00759379 /* imgui_widgets.cpp */,
+				914F3F832F2091DD00759379 /* imgui.cpp */,
+				914F3F822F2091DD00759379 /* imgui.h */,
+				914F3F792F2091DD00759379 /* imstb_rectpack.h */,
+				914F3F812F2091DD00759379 /* imstb_textedit.h */,
+				914F3F802F2091DD00759379 /* imstb_truetype.h */,
+				914F3F892F2091E000759379 /* Metal */,
+			);
+			path = ImGui;
+			sourceTree = "<group>";
+		};
+		914F3F892F2091E000759379 /* Metal */ = {
+			isa = PBXGroup;
+			children = (
+				914F3F8A2F2091EA00759379 /* imgui_impl_metal.h */,
+				914F3F8B2F2091EA00759379 /* imgui_impl_metal.mm */,
+			);
+			path = Metal;
+			sourceTree = "<group>";
+		};
+		914F3F912F209E0D00759379 /* 伪装 */ = {
+			isa = PBXGroup;
+			children = (
+				0FF70D132F29396E000942EC /* 环境隐藏.h */,
+				0FF70D142F29396E000942EC /* 环境隐藏.mm */,
+				914F3F942F20D59A00759379 /* 伪装.h */,
+				914D3C9F2F22757700BB8415 /* 伪装.mm */,
+			);
+			path = "伪装";
+			sourceTree = "<group>";
+		};
+		914F3F9B2F20E86A00759379 /* 游戏 */ = {
+			isa = PBXGroup;
+			children = (
+				91FC43F02F21AFDE005ECDF3 /* 绘制类型.h */,
+				91FC43F32F224FF4005ECDF3 /* 绘制算法.h */,
+			);
+			path = "游戏";
+			sourceTree = "<group>";
+		};
+		914F3F9F2F20E98000759379 /* 内核 */ = {
+			isa = PBXGroup;
+			children = (
+				914F3FA02F20E99B00759379 /* kfd.h */,
+			);
+			path = "内核";
+			sourceTree = "<group>";
+		};
+		91667A032F2C6833008D1957 /* 过直播 */ = {
+			isa = PBXGroup;
+			children = (
+				91667A042F2C684F008D1957 /* 过直播.h */,
+				91667A052F2C6868008D1957 /* 过直播.mm */,
+			);
+			path = "过直播";
+			sourceTree = "<group>";
+		};
+		9186058B2F20574B00B3A6D9 = {
+			isa = PBXGroup;
+			children = (
+				91667A072F2DA23E008D1957 /* 按钮存储.h */,
+				91667A082F2DA380008D1957 /* 按钮存储.mm */,
+				918605B52F205A1800B3A6D9 /* 头文件.h */,
+				918605B02F20598600B3A6D9 /* 主调用.mm */,
+				914F3F712F208F5B00759379 /* HUD */,
+				918605B62F205C5200B3A6D9 /* 应用 */,
+				914F3F912F209E0D00759379 /* 伪装 */,
+				914F3F652F2074A800759379 /* 图片 */,
+				914F3F682F2080F600759379 /* 字体 */,
+				918605CF2F205F3300B3A6D9 /* 权限 */,
+				918605BB2F205E3A00B3A6D9 /* 依赖库 */,
+				918605952F20574B00B3A6D9 /* Products */,
+				918605B22F2059E900B3A6D9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		918605952F20574B00B3A6D9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				918605942F20574B00B3A6D9 /* 地图.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		918605B22F2059E900B3A6D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0FE5D23A2F2FA5A800FD4AFC /* libc.tbd */,
+				0FE5D2382F2FA5A300FD4AFC /* libz.tbd */,
+				0FE5D2362F2FA59C00FD4AFC /* Security.framework */,
+				0FE5D2132F2FA39300FD4AFC /* QuartzCore.framework */,
+				914F3F992F20E79E00759379 /* IOKit.framework */,
+				918605D72F20614500B3A6D9 /* UIKit.framework */,
+				914F3F8D2F20932C00759379 /* Metal.framework */,
+				914F3F8F2F20933000759379 /* MetalKit.framework */,
+				918605B92F205CA900B3A6D9 /* Foundation.framework */,
+				914F3F6B2F2082CD00759379 /* CoreGraphics.framework */,
+				918605B32F2059E900B3A6D9 /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		918605B62F205C5200B3A6D9 /* 应用 */ = {
+			isa = PBXGroup;
+			children = (
+				918605B72F205C6A00B3A6D9 /* 应用.mm */,
+			);
+			path = "应用";
+			sourceTree = "<group>";
+		};
+		918605BB2F205E3A00B3A6D9 /* 依赖库 */ = {
+			isa = PBXGroup;
+			children = (
+				918605CA2F205EA900B3A6D9 /* libproc.h */,
+				918605CB2F205EAD00B3A6D9 /* proc_info.h */,
+				918605C72F205EA500B3A6D9 /* libchoma.dylib */,
+				918605C62F205EA500B3A6D9 /* ljb_dp.dylib */,
+				918605F12F30A00100B3A6D9 /* ljb_rh.dylib */,
+				918605C42F205E9900B3A6D9 /* IOKit.tbd */,
+				918605BE2F205E8B00B3A6D9 /* GraphicsServices.tbd */,
+				918605BF2F205E8B00B3A6D9 /* AssertionServices.tbd */,
+				918605BC2F205E8B00B3A6D9 /* BackBoardServices.tbd */,
+				918605BD2F205E8B00B3A6D9 /* SpringBoardServices.tbd */,
+			);
+			path = "依赖库";
+			sourceTree = "<group>";
+		};
+		918605CF2F205F3300B3A6D9 /* 权限 */ = {
+			isa = PBXGroup;
+			children = (
+				0FE5D2112F2F4FF800FD4AFC /* Entitlements.plist */,
+				918605D02F205F6600B3A6D9 /* Info.plist */,
+			);
+			path = "权限";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		918605932F20574B00B3A6D9 /* 地图 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 918605AD2F20574C00B3A6D9 /* Build configuration list for PBXNativeTarget "地图" */;
+			buildPhases = (
+				918605902F20574B00B3A6D9 /* Sources */,
+				918605912F20574B00B3A6D9 /* Frameworks */,
+				918605922F20574B00B3A6D9 /* Resources */,
+				918605CC2F205ED200B3A6D9 /* CopyFiles */,
+				918605D42F20604500B3A6D9 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "地图";
+			productName = ImGui;
+			productReference = 918605942F20574B00B3A6D9 /* 地图.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9186058C2F20574B00B3A6D9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					918605932F20574B00B3A6D9 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = 9186058F2F20574B00B3A6D9 /* Build configuration list for PBXProject "地图" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9186058B2F20574B00B3A6D9;
+			productRefGroup = 918605952F20574B00B3A6D9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				918605932F20574B00B3A6D9 /* 地图 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		918605922F20574B00B3A6D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FE5D2122F2F4FF800FD4AFC /* Entitlements.plist in Resources */,
+				914F3F962F20D77A00759379 /* 三角洲行动.jpg in Resources */,
+				914F3F6A2F20810300759379 /* 阿里巴巴惠普体.ttf in Resources */,
+				914F3F672F2074C400759379 /* 地图.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		918605D42F20604500B3A6D9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"/opt/homebrew/bin:$PATH\"\necho $PATH\n$PROJECT_DIR/Build.sh\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		918605902F20574B00B3A6D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				914F3F732F208F6F00759379 /* HUD.mm in Sources */,
+				914F3F8C2F2091EA00759379 /* imgui_impl_metal.mm in Sources */,
+				0FF70D152F29396E000942EC /* 环境隐藏.mm in Sources */,
+				914F3F852F2091DD00759379 /* imgui_widgets.cpp in Sources */,
+				914F3F772F20916700759379 /* HUD控制器.mm in Sources */,
+				91667A062F2C6868008D1957 /* 过直播.mm in Sources */,
+				91667A092F2DA380008D1957 /* 按钮存储.mm in Sources */,
+				918605B82F205C6A00B3A6D9 /* 应用.mm in Sources */,
+				918605B12F20598600B3A6D9 /* 主调用.mm in Sources */,
+				914F3F862F2091DD00759379 /* imgui_demo.cpp in Sources */,
+				914F3F842F2091DD00759379 /* imgui_tables.cpp in Sources */,
+				914D3CA02F22757700BB8415 /* 伪装.mm in Sources */,
+				914F3F872F2091DD00759379 /* imgui_draw.cpp in Sources */,
+				914F3F882F2091DD00759379 /* imgui.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		918605AB2F20574C00B3A6D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		918605AC2F20574C00B3A6D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		918605AE2F20574C00B3A6D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "地图";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = NO;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				COMPILER_INDEX_STORE_ENABLE = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/fuck",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "头文件.h";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "权限/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "地图";
+				INFOPLIST_KEY_NSMainStoryboardFile = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/依赖库",
+					"$(PROJECT_DIR)/fuck",
+				);
+				MACOSX_DEPLOYMENT_TARGET = "";
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.Maps;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = "";
+				VERSIONING_SYSTEM = "apple-generic";
+				WATCHOS_DEPLOYMENT_TARGET = "";
+				XROS_DEPLOYMENT_TARGET = "";
+			};
+			name = Debug;
+		};
+		918605AF2F20574C00B3A6D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "地图";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = NO;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				COMPILER_INDEX_STORE_ENABLE = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/fuck",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "头文件.h";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "权限/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "地图";
+				INFOPLIST_KEY_NSMainStoryboardFile = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/依赖库",
+					"$(PROJECT_DIR)/fuck",
+				);
+				MACOSX_DEPLOYMENT_TARGET = "";
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.Maps;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = "";
+				VERSIONING_SYSTEM = "apple-generic";
+				WATCHOS_DEPLOYMENT_TARGET = "";
+				XROS_DEPLOYMENT_TARGET = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9186058F2F20574B00B3A6D9 /* Build configuration list for PBXProject "地图" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				918605AB2F20574C00B3A6D9 /* Debug */,
+				918605AC2F20574C00B3A6D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		918605AD2F20574C00B3A6D9 /* Build configuration list for PBXNativeTarget "地图" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				918605AE2F20574C00B3A6D9 /* Debug */,
+				918605AF2F20574C00B3A6D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9186058C2F20574B00B3A6D9 /* Project object */;
+}
